@@ -1,6 +1,8 @@
-import './RegPage.css'
+import React from 'react';
+import './RegPage.css';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 const RegPage = () => {
     return (
@@ -9,7 +11,7 @@ const RegPage = () => {
                 <h1>Регистрация</h1>
             </div>
             <div className='reg-main'>
-                <p>Уже есть аккаунт? <a href=''>Войти</a></p>
+                <p>Уже есть аккаунт? <Link to="/">Войти</Link></p>
                 <Form>
                     <Form.Label>Имя</Form.Label>
                     <Form.Control type="text" />
