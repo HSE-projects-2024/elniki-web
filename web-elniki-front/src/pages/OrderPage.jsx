@@ -18,7 +18,7 @@ export const OrderPage = () => {
     return (
         <div>
             <h1>Заказ ски-пасса</h1>
-            <form onSubmit={e => e.preventDefault()} className="w-1/4 h-60 mx-auto mt-10">
+            <form onSubmit={e => e.preventDefault()} className="custom-class">
                 <label>
                 <div className="title">Тип ски-пасса</div>
                 <select id="typeSelect" value={selectedType} onChange={handleTypeChange} className="text-in-box">
@@ -36,7 +36,7 @@ export const OrderPage = () => {
                 <label>
                 <div className="title">Выберите дату</div>
                     <div>
-                        {date && <p>Выбранная дата: {date.toLocaleDateString()}</p>}
+                        {date && <p className='date'>Выбранная дата: {date.toLocaleDateString()}</p>}
                         <Calendar onChange={handleDateChange} />
                     </div>
                 </label>

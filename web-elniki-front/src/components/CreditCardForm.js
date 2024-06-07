@@ -37,7 +37,7 @@ const CreditCardForm = () => {
               type="number"
               name="number"
               className="form-control"
-              placeholder="Card Number"
+              placeholder="Номер карты"
               value={state.number}
               onChange={handleInputChange}
               onFocus={handleInputFocus}
@@ -49,7 +49,7 @@ const CreditCardForm = () => {
               type="text"
               name="name"
               className="form-control"
-              placeholder="Name"
+              placeholder="Имя"
               onChange={handleInputChange}
               onFocus={handleInputFocus}
               required
@@ -61,7 +61,7 @@ const CreditCardForm = () => {
                 type="number"
                 name="expiry"
                 className="form-control"
-                placeholder="Valid Thru"
+                placeholder="Годен до"
                 pattern="\d\d/\d\d"
                 value={state.expiry}
                 onChange={handleInputChange}
@@ -85,7 +85,7 @@ const CreditCardForm = () => {
           </div>
 
           <div className="d-grid">
-            <button className="btn btn-dark">Confirm</button>
+            <button className="submit">Подтвердить</button>
           </div>
         </form>
       </div>
