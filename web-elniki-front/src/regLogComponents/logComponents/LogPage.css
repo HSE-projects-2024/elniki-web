@@ -1,0 +1,16 @@
+.log-head {
+    background-color: rgba(97, 168, 212, 0.5);
+    padding: 1.3%;
+    margin-top: 3%;
+    width: fit-content;
+    border-radius: 18px;
+}
+
+.log-main {
+    margin-top: 1%;
+    width: 35%;
+}
+
+p {
+    margin-top: 1%;
+}
