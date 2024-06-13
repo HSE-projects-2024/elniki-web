@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import CreditCardForm from "../components/CreditCardForm";
 import { NavLink } from 'react-router-dom';
+import '../order.css';
 
 export const BuyingPage = () => {
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar } from "./Navbar";
+import '../order.css';
 
 export const Layout = ({ children }) => {
     return (

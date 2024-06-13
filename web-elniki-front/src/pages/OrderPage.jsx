@@ -1,6 +1,7 @@
 import Calendar from '../components/Calendar';
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import '../order.css';
 
 export const OrderPage = () => {
     const [date, setDate] = useState(null);
