@@ -1,0 +1,58 @@
+/* Footer */
+.footer {
+    margin-top: auto;
+    padding: 60px 20px 50px;
+    background-color: #F89434; /* Укажите нужный цвет фона */
+    color: #fff; /* Укажите нужный цвет текста */
+    font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 30px;
+	line-height: 28px;
+}
+
+.footer__wrapper {
+    display: flex;
+    justify-content: space-between; /* Разделение элементов по краям */
+    align-items: center;
+}
+
+.footer__column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 10px;
+}
+
+.social {
+    display: flex;
+    column-gap: 30px;
+    align-items: center;
+}
+
+.social__item img {
+    width: 30px; /* Укажите нужный размер иконки */
+    height: 30px;
+    
+}
+
+.social__item img:hover {
+    filter: invert(1) ; /* Пример фильтра для изменения цвета при наведении */
+}
+
+.copyright {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.address,
+.contact {
+    font-size: 16px;
+}
+
+.contact p {
+    margin: 0;
+}
+

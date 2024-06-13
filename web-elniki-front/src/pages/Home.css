@@ -1,0 +1,51 @@
+.content-list2 {
+    display: flex; /* Располагаем элементы в строку */
+    align-items: center; /* Выравниваем элементы по вертикали */
+}
+
+.content-list__image {
+    margin-right: 20px; /* Отступ справа от большой картинки */
+    flex: 0 0 auto; /* Оставляем большую картинку фиксированной ширины */
+}
+
+.content-list__image img {
+    width: 512px; /* Ширина большой картинки */
+    height: auto; /* Высота автоматически подстраивается */
+}
+
+.custom-title {
+    position: relative; /* Позволяет позиционировать псевдоэлемент */
+    display: inline-block; /* Чтобы прямоугольник ограничивал текст */
+    padding: 2em 5em; /* Отступы вокруг текста */
+    background-color: #F89434; /* Цвет фона прямоугольника */
+    color: #fff; /* Цвет текста */
+    font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 34px;
+	line-height: 30px;
+	text-align: center;
+}
+/* Button styles */
+.btn2 {
+    display: inline-block;
+    padding: 10px 20px;
+    font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 20px;
+	line-height: 26px;
+
+    color: #ffffff; 
+    background-color: #3591A5; 
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn2:hover {
+    background-color: #032C4A;
+}
+
