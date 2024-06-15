@@ -11,7 +11,7 @@ const SkiResort = () => {
             <div className="image-container">
                 <img src={skier} alt="Skier" className="skier-image" />
             </div>
-            <button className="resort-button">О курорте</button>
+            <a href="/abouttheresort" className="resort-button">О курорте</a>
             <div className="background-block blue-block2"></div>
         </div>
         

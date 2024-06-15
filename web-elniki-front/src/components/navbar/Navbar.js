@@ -31,11 +31,7 @@ const Navbar = () => {
       <div className="container">
         <div className="nav-row">
           <NavLink to="/" className="logo">
-            <span className="bold-text">BE
-              <span className={getLogoClass()}>SKI</span>
-              D TIME
-            </span>
-            <br />ЕЛЬНИКИ
+            <span className="bold-text">BE<span className={getLogoClass()}>SKI</span>D TIME</span><br />ЕЛЬНИКИ
           </NavLink>
           <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)}>
             <img src={menuIcon} alt="Menu" className="menu-icon" />

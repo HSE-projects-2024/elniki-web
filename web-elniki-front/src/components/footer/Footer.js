@@ -3,7 +3,7 @@ import "./style.css";
 
 import vk from './../../img/icons/vk.svg';
 import instagram from './../../img/icons/instagram.svg';
-import twitter from './../../img/icons/telegram4.svg';
+import telegram from './../../img/icons/telegram4.svg';
 
 const Footer = () => {
     return (
@@ -17,18 +17,18 @@ const Footer = () => {
                     </div>
                     <ul className="horizontal-list">
                         <li className="social__item">
-                            <a href="#!">
+                            <a href="https://vk.com/eugen.isay">
                                 <img src={vk} alt="VK Link" />
                             </a>
                         </li>
                         <li className="social__item">
-                            <a href="#!">
+                            <a href="https://www.instagram.com/nellkree?igsh=b2FzczRtaWR1cXBi">
                                 <img src={instagram} alt="Instagram Link" />
                             </a>
                         </li>
                         <li className="social__item">
-                            <a href="#!">
-                                <img src={twitter} alt="Twitter Link" />
+                            <a href="https://t.me/NellKree">
+                                <img src={telegram} alt="Twitter Link" />
                             </a>
                         </li>
                     </ul>

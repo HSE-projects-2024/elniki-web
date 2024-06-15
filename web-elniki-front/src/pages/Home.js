@@ -13,8 +13,8 @@ const Home = () => {
             <main className="section">
                 <div className="container">
 				    <ul className="vertical-list">
-                        <li className="content-list__item">      
-                                <p>Красивые пейзажи и природные виды? Пикники у костра? 
+                        <li className="content-list__item" style={{width: '600px'}}>      
+                                <p >Красивые пейзажи и природные виды? Пикники у костра? 
                                 А может быть, катание на горных лыжах и сноубордах?</p>
                         </li>
                         <ul className="horizontal-list">

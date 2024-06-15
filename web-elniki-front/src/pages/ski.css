@@ -63,11 +63,12 @@
     color: #171718;
     border: none;
     border-radius: 20px;
-    font-size: 24px;
+    font-size: 29px;
     z-index: 3;
     cursor: pointer;
 }
 
 .resort-button:hover {
-    background-color: #ADD8E6; /* Светло-голубой цвет при наведении */
+    background-color: #DC725D;
+    color: #fff; 
 }
