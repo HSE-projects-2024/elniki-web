@@ -1,20 +1,75 @@
-import acc from "./../../img/icons/Account.png"
+import React, { useEffect, useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
+import acc from "./../../img/icons/Account.png";
+import menuIcon from "./../../img/menu1.svg";
 import "./style.css";
-const Navbar = () => {
-	return ( <nav className="nav">
-        <div className="container">
-            <div className="nav-row">
-                <a href="./index.html" className="logo"><strong>BESKID TIME</strong> ЕЛЬНИКИ</a>
 
-                <ul className="nav-list">
-                    <li className="nav-list__item"><a href="./" className="nav-list__link nav-list__link--active">Домашняя страница</a></li>
-                    <li className="nav-list__item"><a href="./services.html" className="nav-list__link">Услуги</a></li>
-                    <li className="nav-list__item"><a href="./accommodation.html" className="nav-list__link">Проживание</a></li>
-					<li className="nav-list__item"><a href="./abouttheresort.html" className="nav-list__link">О курорте</a></li>
-					<li className="account-icon"><a href="./account.html"><img src={acc} alt="Link"/></a></li>
-                </ul>
-            </div>
+const Navbar = () => {
+  const location = useLocation();
+  const [activePath, setActivePath] = useState(location.pathname);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    setActivePath(location.pathname);
+    setMenuOpen(false);
+  }, [location]);
+
+  const getLogoClass = () => {
+    if (activePath === '/') {
+      return 'colored-text-home';
+    } else if (activePath.includes('/services')) {
+      return 'colored-text-services';
+    } else if (activePath.includes('/accommodation')) {
+      return 'colored-text-accommodation';
+    } else {
+      return 'default-text';
+    }
+  };
+
+  return (
+    <nav className="nav">
+      <div className="container">
+        <div className="nav-row">
+          <NavLink to="/" className="logo">
+            <span className="bold-text">BE
+              <span className={getLogoClass()}>SKI</span>
+              D TIME
+            </span>
+            <br />ЕЛЬНИКИ
+          </NavLink>
+          <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)}>
+            <img src={menuIcon} alt="Menu" className="menu-icon" />
+          </button>
+          <ul className={`nav-list ${menuOpen ? 'nav-list--open' : ''}`}>
+            <li className="nav-list__item">
+              <NavLink to="/" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"} end>
+                Домашняя страница
+              </NavLink>
+            </li>
+            <li className="nav-list__item">
+              <NavLink to="/services" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"}>
+                Услуги
+              </NavLink>
+            </li>
+            <li className="nav-list__item">
+              <NavLink to="/accommodation" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"}>
+                Проживание
+              </NavLink>
+            </li>
+            <li className="nav-list__item">
+              <NavLink to="/abouttheresort" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"}>
+                О курорте
+              </NavLink>
+            </li>
+            <li className="account-icon">
+              <NavLink to="/account"><img src={acc} alt="Account" /></NavLink>
+            </li>
+          </ul>
         </div>
-    </nav> );
-}
+      </div>
+    </nav>
+  );
+};
+
 export default Navbar;
+

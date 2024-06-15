@@ -1,0 +1,73 @@
+.resort-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Высота блока, можно изменить */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #fff; /* Белый фон для контейнера */
+}
+
+.background-block {
+    position: absolute;
+    z-index: 1;
+}
+
+.blue-block {
+    top: 0;
+    left: 0;
+    width: 45%;
+    height: 70%;
+    background-color: #032C4A; /* Темно-синий цвет */
+}
+.blue-block2 {
+    top: 80%;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background-color: #032C4A; /* Темно-синий цвет */
+}
+.white-block {
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 90%;
+    background-color: #fff; /* Белый цвет */
+}
+
+
+.red-block {
+    top: 35%;
+    right: 0;
+    width: 40%;
+    height: 50%;
+    background-color: #DC725D; /* Красный цвет */
+}
+
+.image-container {
+    position: relative;
+    z-index: 2;
+}
+
+.skier-image {
+    width: 600px; /* Примерный размер изображения, можно изменить */
+    height: auto;
+}
+
+.resort-button {
+    position: absolute;
+    bottom: 15%;
+    padding: 20px 30px;
+    background-color: #C7F5FF; /* Цвет кнопки */
+    color: #171718;
+    border: none;
+    border-radius: 20px;
+    font-size: 24px;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.resort-button:hover {
+    background-color: #ADD8E6; /* Светло-голубой цвет при наведении */
+}

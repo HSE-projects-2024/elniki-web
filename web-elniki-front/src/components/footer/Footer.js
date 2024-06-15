@@ -15,7 +15,7 @@ const Footer = () => {
 						<p>Добрянский городской округ​</p>
 						<p>Пермский край​</p>
                     </div>
-                    <ul className="social">
+                    <ul className="horizontal-list">
                         <li className="social__item">
                             <a href="#!">
                                 <img src={vk} alt="VK Link" />
