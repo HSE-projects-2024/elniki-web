@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Cards from "react-credit-cards-2";
 import "react-credit-cards-2/dist/es/styles-compiled.css";
+import './CreditCardForm.css'; // Импортировать файл стилей для формы
 
 const CreditCardForm = () => {
   const [state, setState] = useState({
@@ -8,7 +9,6 @@ const CreditCardForm = () => {
     name: "",
     expiry: "",
     cvc: "",
-    name: "",
     focus: "",
   });
 

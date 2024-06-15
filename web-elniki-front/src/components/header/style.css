@@ -20,6 +20,7 @@
 	font-size: 34px;
 	line-height: 30px;
 	text-align: center;
+	width: 100vw;
 }
 
 .header__wrapper {
@@ -58,7 +59,7 @@
 }
 
 /* Button styles */
-.btn {
+.bt {
     display: inline-block;
     padding: 10px 20px;
     font-family: 'Raleway';
@@ -76,6 +77,6 @@
     transition: background-color 0.3s ease;
 }
 
-.btn:hover {
+.bt:hover {
     background-color: #032C4A;
 }

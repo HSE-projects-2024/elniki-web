@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import CreditCardForm from "../components/CreditCardForm";
-import { NavLink } from 'react-router-dom';
-import '../order.css';
+import CreditCardForm from "../components/creditCard/CreditCardForm"
 
 export const BuyingPage = () => {
 
     return (
         <div>
-            <h1>Оплата</h1>
-            <form onSubmit={e => e.preventDefault()} className="custom-class">
+            <div className='order-head'>
+                <h1>Оплата</h1>
+            </div>
                 <label> 
-                    <div className="container mt-5">
+                    <div>
                         <div className="title">Введите данные банковской карты</div>
                         <CreditCardForm />
                     </div>
@@ -23,7 +22,6 @@ export const BuyingPage = () => {
                     <p>Пн–Вс: 7:30–21:30</p>
                   </div>
                 </label>
-            </form>
         </div>
     );
 }

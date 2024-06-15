@@ -33,9 +33,9 @@ const RegPage = () => {
                     <Form.Control type="password" />
                 </Form>
             </div>
-            <div className='text-center'>
+            <p className='text-center'>
                 <Button variant="dark" size="lg">Зарегистрироваться</Button>
-            </div>
+            </p>
         </div>
     );
 }
