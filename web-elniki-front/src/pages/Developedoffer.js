@@ -1,38 +1,39 @@
 
-import './Home.css'; // Подключаем файл со стилями
+import './Developedoffer.css'; // Подключаем файл со стилями
 
-import ski2 from './../img/ski2.jpg';
+import ski2 from './../img/skiingpass.jpg';
+import ski3 from './../img/Rectangle 1 (1).png'; // Добавьте дополнительные изображения
+
 const Developedoffer = () => {
-
     return (
-		<main className="section">
-                <div className="container">
-				<ul className="content-list">
-				<li className="content-list__item">
-                <h1 className="title-1">Услуги</h1>
-                        </li>
-
-                    <ul className="content-list2">
-                        {/* Большая картинка слева */}
+        <main className="section">
+            <div className="container">
+                <ul className="vertical-list">
+                    <li className="content-list__item">
+                        <h1 className="title-1 left-align width">Услуги</h1>
+                    </li>
+                    <ul className="horizontal-list">
                         <li className="content-list__image">
-                            <img src={ski2} alt="Large Image" />
+                            <div className="multi-layered-block">
+                                <img src={ski2} alt="Layer 2" className="layer layer2" />
+                                <img src={ski3} alt="Layer 1" className="layer layer1" />
+                                <div className="text-overlay">SKIPASS</div>
+                            </div>
                         </li>
-						<ul className="content-list">
-                        {/* Первый элемент списка */}
-                        <li className="content-list__item">
-                        <h1 className="custom-title">SKIPASS</h1>
-                        </li>
-
-						</ul>
+   
                     </ul>
                     <li className="content-list__item">
-                            <p>SKIPASS на спуск, дневной SKIPASS, сезонный SKIPASS? Неважно, сколько дней вы планируете кататься на борде или лыжах, у нас есть то, что вам нужно! Загляните к нам, и вы получите доступ к бесконечному веселью на наших склонах в течение всего сезона!</p>
-                            <a href="./services.html" className="btn2">Смотреть</a>
-                        </li>
-					</ul>
-                </div>
-            </main>
-	);
+                        <p className="left-align width">
+                            <strong>SKIPASS</strong> на спуск, дневной <strong>SKIPASS</strong>, сезонный <strong>SKIPASS</strong> ?<br />
+                            Неважно, сколько дней вы планируете кататься на борде или лыжах, у нас есть то, что вам нужно!
+                            Загляните к нам, и вы получите доступ к <span className="bold-colored-text">бесконечному веселью</span> на наших склонах в течение <span className="colored-text">всего сезона</span>!
+                        </p>      
+                    </li>
+                    <a href="./services.html" className="btn ">Смотреть</a>
+                </ul>
+            </div>
+        </main>
+    );
 }
 
 export default Developedoffer;
