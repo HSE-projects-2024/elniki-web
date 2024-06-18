@@ -17,6 +17,7 @@ export const OrderPage = () => {
     };
 
     return (
+        <body class="body-page1">
         <div>
             <div className='order-head'>
                 <h1>Заказ ски-пасса</h1>
@@ -49,5 +50,6 @@ export const OrderPage = () => {
             </div>
 
         </div>
+        </body>
     );
 }

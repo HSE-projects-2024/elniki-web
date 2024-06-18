@@ -14,9 +14,11 @@
 	color: #FFFFFF; 
 	text-align: center;
 	overflow: hidden;
+	width: 100vw;
 }
 
 .header__wrapper {
+	align-items: center;
 	padding: 0 15px;
 	max-width: 660px;
 }

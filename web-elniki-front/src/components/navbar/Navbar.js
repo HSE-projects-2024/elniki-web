@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, Link } from 'react-router-dom';
 import acc from "./../../img/icons/Account.png";
 import menuIcon from "./../../img/menu1.svg";
 import "./style.css";
@@ -57,9 +57,14 @@ const Navbar = () => {
                 О курорте
               </NavLink>
             </li>
-            <li className="account-icon">
-              <NavLink to="/account"><img src={acc} alt="Account" /></NavLink>
+            <li className="nav-list__item">
+              <NavLink to="/order" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"}>
+              Заказ ски-пасса
+              </NavLink>
             </li>
+            <Link to="./login" className="account-icon">
+                        <img src={acc} alt="example"/>
+            </Link>
           </ul>
         </div>
       </div>

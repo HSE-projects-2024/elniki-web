@@ -5,6 +5,7 @@ import CreditCardForm from "../components/creditCard/CreditCardForm"
 export const BuyingPage = () => {
 
     return (
+        <body class="body-page1">
         <div>
             <div className='order-head'>
                 <h1>Оплата</h1>
@@ -23,5 +24,6 @@ export const BuyingPage = () => {
                   </div>
                 </label>
         </div>
+        </body>
     );
 }

@@ -53,6 +53,16 @@
     position: relative;
     z-index: 2;
     bottom: 36%;
+    color: #032C4A;
+    background-color: #032C4A; 
+}
+
+.table .table-bordered {
+    color: #032C4A;
+}
+
+.table-group-divider{
+    color: #032C4A;
 }
 .map-container {
     position: absolute;
@@ -62,7 +72,7 @@
 .last-container {
     position: absolute;
     z-index: 3;
-    bottom: 5%;
+    bottom: 2%;
 }
 .skier-image2 {
     width: 600px; 
@@ -132,8 +142,16 @@
   }
   
   /* Стили для строк и ячеек таблицы */
-  .table tbody tr {
+  .table tbody td {
     border-top: 2px solid #C7F5FF;
+    vertical-align: bottom;
+    border-bottom: 2px solid #C7F5FF;
+    background-color: #032C4A;
+    color: #FFFFFF; /* Цвет текста в заголовках */
+    font-weight: bold;
+    text-align: left;
+    padding: 20px 20px;
+    border-right: 2px solid #C7F5FF; /* Вертикальные разделители */
   }
   
   .table tbody td, 

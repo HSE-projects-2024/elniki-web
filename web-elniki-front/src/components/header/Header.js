@@ -12,7 +12,7 @@ const Header = () => {
 				<div className="header__text">
 					<p>Лучшие истории начинаются здесь</p>
 				</div>
-				<a href="./services" className="btn">
+				<a href="./services" className="services">
 					Услуги
 				</a>
 			</div>

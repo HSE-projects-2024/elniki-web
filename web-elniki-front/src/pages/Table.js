@@ -80,7 +80,7 @@ const Table = () => {
             <div className="background-block2 green-block"></div>
             <div className="last-container">
             <ul className="vertical-list">
-                    <p className="title-2" style={{padding:'200px'}}><strong>Присоединяйтесь к нам!</strong></p>
+                    <p className="title-2"><strong>Присоединяйтесь к нам!</strong></p>
                     <img src={pobrane}  className="skier-image2" />           
                 </ul>
             </div>

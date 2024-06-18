@@ -24,7 +24,7 @@ html,
 body {
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
+
 
 	font-family: 'Raleway';
 	font-style: normal;
@@ -106,9 +106,9 @@ body {
 }
 
 /* Button styles */
-.btn {
+.services {
     display: inline-block;
-    
+    max-width: 270px;
     padding: 10px 20px;
     color: #ffffff;  
     background-color: #3591A5; 
@@ -119,7 +119,7 @@ body {
     cursor: pointer;
 }
 
-.btn:hover {
+.services:hover {
     background-color: #032C4A;
 }
 

@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom';
 
 const LogPage = () => {
     return (
-        <div>
+        <body class="body-page2">
+        <div className='background-page1'>
             <div className='log-head'>
                 <h1>Авторизация</h1>
             </div>
@@ -28,6 +29,7 @@ const LogPage = () => {
             </div>
             <p className='text-center'>Еще нет аккаунта? <Link to="/reg">Зарегистрироваться</Link></p>
         </div>
+        </body>
     );
 }
 
