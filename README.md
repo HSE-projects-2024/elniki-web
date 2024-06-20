@@ -1,5 +1,5 @@
-# elniki-web-front
-Front part of the Elniki web app
+# elniki-web
+Elniki web app
 
 ### Чтобы запустить проект, в терминале прописываем следующие команды:
 
