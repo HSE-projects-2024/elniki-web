@@ -1,11 +1,12 @@
 const request = require('supertest');
-const app = require('../index');
+const { app, server } = require('../index');
 const conn = require('../db');
 
 describe('POST /reg', () => {
 
     afterAll(async () => {
-        await conn.end();
+        server.close();
+        conn.end();
     });
 
     it('should register a new user', async () => {
