@@ -41,20 +41,9 @@ jobs:
           npm rebuild bcrypt --build-from-source
         working-directory: web-elniki-back
 
-      - name: Start backend application
-        env:
-          DATABASE_HOST: localhost
-          DATABASE_USER: root
-          DATABASE_PASSWORD: root
-          DATABASE_NAME: skiresortapp
-        run: |
-          npm start &
-          sleep 5
-        working-directory: web-elniki-back
-
       - name: Run backend tests
         env:
-          DATABASE_HOST: localhost
+          DATABASE_HOST: 127.0.0.1
           DATABASE_USER: root
           DATABASE_PASSWORD: root
           DATABASE_NAME: skiresortapp
