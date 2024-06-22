@@ -1,0 +1,125 @@
+/* Footer */
+.footer {
+    margin-top: auto;
+    padding: 60px 20px 50px;
+    background-color: #F89434; /* Укажите нужный цвет фона */
+    color: #fff; /* Укажите нужный цвет текста */
+    font-weight: 600;
+    line-height: 24px;
+    width: 100vw;
+}
+
+.footer__wrapper {
+    display: flex;
+    justify-content: space-between; /* Разделение элементов по краям */
+    align-items: center;
+    flex-wrap: wrap; /* Добавляем возможность переносить элементы на новую строку */
+}
+
+.footer__column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 5px;
+}
+
+.social__item img {
+    width: 40px; /* Укажите нужный размер иконки */
+    height: 40px;
+}
+
+.social__item img:hover {
+    filter: invert(1); /* Пример фильтра для изменения цвета при наведении */
+}
+
+.copyright {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.address,
+.contact {
+    font-size: 16px;
+}
+
+.contact p {
+    margin: 0;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Large devices (desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .footer {
+        padding: 60px 20px 50px;
+    }
+    .footer__wrapper {
+        flex-wrap: nowrap;
+    }
+}
+
+/* Medium devices (tablets, 768px to 1199px) */
+@media (max-width: 1199px) {
+    .footer {
+        padding: 50px 15px 40px;
+    }
+    .footer__wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px; /* Добавляем отступы между элементами */
+    }
+    .social__item img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Small devices (landscape phones, 576px to 767px) */
+@media (max-width: 767px) {
+    .footer {
+        padding: 40px 10px 30px;
+    }
+    .footer__wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Центрируем текст */
+    }
+    .footer__column {
+        align-items: center; /* Центрируем элементы в колонках */
+    }
+    .social__item img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {
+    .footer {
+        padding: 30px 5px 20px;
+    }
+    .footer__wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Центрируем текст */
+    }
+    .footer__column {
+        align-items: center; /* Центрируем элементы в колонках */
+    }
+    .social__item img {
+        width: 25px;
+        height: 25px;
+    }
+    .copyright {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    .address,
+    .contact {
+        font-size: 14px;
+    }
+}
+
+

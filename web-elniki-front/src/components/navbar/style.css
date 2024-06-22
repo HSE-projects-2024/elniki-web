@@ -1,0 +1,275 @@
+/* Navbar */
+.nav {
+	padding: 20px 0;
+	background-color: #fff; /* Укажите нужный цвет фона навигации */
+	border-bottom: 1px solid #3591A5; /* Укажите нужный цвет границы */
+	color: #444; /* Укажите нужный цвет текста */
+	letter-spacing: normal;
+  }
+  
+  .nav-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	column-gap: 30px;
+	row-gap: 20px;
+	flex-wrap: nowrap;
+  }
+  
+  .logo {
+	color: #444; /* Укажите нужный цвет текста */
+	font-family: 'Alice';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 28px;
+	line-height: 32px;
+  }
+  
+  .logo strong {
+	font-weight: 700;
+  }
+  
+  .menu-button {
+	display: none;
+	background: none;
+	border: none;
+	cursor: pointer;
+	outline: none;
+  }
+  
+  .menu-button img {
+	width: 30px;
+	height: 30px;
+  }
+  
+  .nav-list {
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 10px;
+	align-items: center;
+	column-gap: 40px;
+	font-size: 16px;
+	font-weight: 500;
+  }
+  
+  .nav-list__link {
+	color: #444; /* Укажите нужный цвет текста */
+	transition: opacity 0.2s ease-in;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 28px;
+  }
+  
+  .nav-list__link:hover {
+	opacity: 0.8;
+  }
+  
+  .nav-list__link--active {
+	position: relative;
+  }
+  
+  .nav-list__link--active::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 100%;
+	display: block;
+	height: 2px;
+	width: 100%;
+	background-color: #F89434; /* Укажите нужный акцентный цвет */
+  }
+  
+  .account-icon {
+	position: relative;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #fff; /* Укажите нужный цвет фона иконки */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	overflow: hidden; /* Обрезаем любое содержимое, выходящее за пределы круга */
+  }
+  
+  .account-icon::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('./../../img/icons/Account3.png'); /* Укажите путь к вашему PNG-изображению */
+	background-size: cover; /* Масштабируем изображение, чтобы оно полностью покрывало круг */
+	background-position: center; /* Выравниваем изображение по центру круга */
+  }
+  
+  .account-icon:hover::before {
+	opacity: 0.8; /* Пример добавления эффекта прозрачности при наведении */
+  }
+  
+  .default-text {
+	color: #3591A5; /* Исходный цвет текста */
+  }
+  
+  .colored-text-home {
+	color: #3591A5; /* Цвет для домашней страницы */
+  }
+  
+  .colored-text-services {
+	color: #F89434; /* Цвет для страницы услуг */
+  }
+  
+  .colored-text-accommodation {
+	color: #63804D; /* Цвет для страницы проживания */
+  }
+  
+  /* Media Queries for Responsive Design */
+/* Large devices (desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	.nav {
+	padding: 20px 0;
+	}
+	.nav-row {
+	column-gap: 30px;
+	}
+	.logo {
+	font-size: 28px;
+	}
+	.menu-button {
+	display: none;
+	}
+	.nav-list {
+	display: flex;
+	flex-wrap: nowrap;
+	column-gap: 40px;
+	font-size: 16px;
+	}
+	.nav-list__link {
+	font-size: 20px;
+	}
+	}
+	
+	/* Medium devices (tablets, 768px to 1199px) */
+	@media (max-width: 1199px) {
+	.nav {
+	padding: 15px 10px;
+	}
+	.nav-row {
+	column-gap: 20px;
+	}
+	.logo {
+	font-size: 24px;
+	}
+	.menu-button {
+	display: block;
+	}
+	.menu-button img {
+	width: 25px;
+	height: 25px;
+	}
+	.nav-list {
+	display: none;
+	flex-direction: column;
+	align-items: flex-start;
+	background-color: #fff;
+	position: absolute;
+	top: 70px;
+	left: 0;
+	width: 100%;
+	padding: 20px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+	}
+	.nav-list--open {
+	display: flex;
+	}
+	.nav-list__item {
+	width: 100%;
+	}
+	.nav-list__link {
+	font-size: 18px;
+	padding: 10px 0;
+	}
+	}
+	
+	/* Small devices (landscape phones, 576px to 767px) */
+	@media (max-width: 767px) {
+	.nav {
+	padding: 10px;
+	}
+	.nav-row {
+	column-gap: 10px;
+	}
+	.logo {
+	font-size: 22px;
+	}
+	.menu-button {
+	display: block;
+	}
+	.menu-button img {
+	width: 20px;
+	height: 20px;
+	}
+	.nav-list {
+	display: none;
+	flex-direction: column;
+	align-items: flex-start;
+	background-color: #fff;
+	position: absolute;
+	top: 70px;
+	left: 0;
+	width: 100%;
+	padding: 20px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+	}
+	.nav-list--open {
+	display: flex;
+	}
+	.nav-list__link {
+	font-size: 16px;
+	padding: 8px 0;
+	}
+	}
+	
+	/* Extra small devices (portrait phones, less than 576px) */
+	@media (max-width: 575px) {
+	.nav {
+	padding: 10px 5px;
+	}
+	.nav-row {
+	column-gap: 5px;
+	}
+	.logo {
+	font-size: 20px;
+	}
+	.menu-button {
+	display: block;
+	}
+	.menu-button img {
+	width: 18px;
+	height: 18px;
+	}
+	.nav-list {
+	display: none;
+	flex-direction: column;
+	align-items: flex-start;
+	background-color: #fff;
+	position: absolute;
+	top: 70px;
+	left: 0;
+	width: 100%;
+	padding: 15px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+	}
+	.nav-list--open {
+	display: flex;
+	}
+	.nav-list__link {
+	font-size: 14px;
+	padding: 6px 0;
+	}
+	}
+  

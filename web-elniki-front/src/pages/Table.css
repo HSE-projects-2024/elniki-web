@@ -1,0 +1,173 @@
+.resort-container2 {
+    position: relative;
+    width: 100%;
+    height: 450vh; /* Высота блока, можно изменить */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #032C4A;
+}
+
+.background-block2 {
+    position: absolute;
+    z-index: 1;
+}
+.green-block {
+    top: 77%;
+    left: 20%;
+    width: 80%;
+    height: 19%;
+    background-color: #63804D; 
+}
+
+.white-block2 {
+    top: 65%;
+    left: 0%;
+    width: 100%;
+    height: 35%;
+    background-color: #fff; /* Белый цвет */
+}
+.white-block22 {
+    top: 30%;
+    left: 0%;
+    width: 100%;
+    height: 10%;
+    background-color: #fff; /* Белый цвет */
+}
+
+.Brownish-block {
+    top: 40%;
+    right: 0;
+    width: 100%;
+    height: 25%;
+    background-color: #272022;
+}
+
+.image-Kasina-container {
+    position: absolute;
+    z-index: 2;
+    bottom: 57%;
+}
+.table-container {
+    position: relative;
+    z-index: 2;
+    bottom: 36%;
+    color: #032C4A;
+    background-color: #032C4A; 
+}
+
+.table .table-bordered {
+    color: #032C4A;
+}
+
+.table-group-divider{
+    color: #032C4A;
+}
+.map-container {
+    position: absolute;
+    z-index: 3;
+    bottom: 40%;
+}
+.last-container {
+    position: absolute;
+    z-index: 3;
+    bottom: 2%;
+}
+.skier-image2 {
+    width: 600px; 
+    height: auto;
+}
+
+.skipass-button {
+    position: absolute;
+    top:41%;
+    padding: 20px 30px;
+    background-color: #F89434; /* Цвет кнопки */
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 29px;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.skipass-button:hover {
+    background-color: #032C4A; 
+}
+
+.contact-button {
+    position: absolute;
+    top:62%;
+    padding: 20px 30px;
+    background-color: #DC725D; /* Цвет кнопки */
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 29px;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.contact-button:hover {
+    background-color: #C7F5FF; 
+    color: #272022;
+}
+
+/* Основные стили для таблицы */
+.table {
+    width: 600px;
+    height: auto;
+    margin-bottom: 1rem;
+    color: #032C4A;
+    border-collapse: collapse;
+    font-size: 28px;
+  }
+  
+  /* Границы таблицы */
+  .table-bordered {
+    border: 5px solid #C7F5FF;
+  }
+  
+  /* Заголовки таблицы */
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #C7F5FF;
+    background-color: #032C4A;
+    color: #FFFFFF; /* Цвет текста в заголовках */
+    font-weight: bold;
+    text-align: left;
+    padding: 20px 20px;
+    border-right: 2px solid #C7F5FF; /* Вертикальные разделители */
+  }
+  
+  /* Стили для строк и ячеек таблицы */
+  .table tbody td {
+    border-top: 2px solid #C7F5FF;
+    vertical-align: bottom;
+    border-bottom: 2px solid #C7F5FF;
+    background-color: #032C4A;
+    color: #FFFFFF; /* Цвет текста в заголовках */
+    font-weight: bold;
+    text-align: left;
+    padding: 20px 20px;
+    border-right: 2px solid #C7F5FF; /* Вертикальные разделители */
+  }
+  
+  .table tbody td, 
+  .table tbody th {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #C7F5FF;
+    color: #FFFFFF; /* Цвет текста в ячейках */
+    padding: 20px 20px;
+    border-right: 2px solid #C7F5FF; /* Вертикальные разделители */
+  }
+        
+  /* Стили для ячеек, объединенных по горизонтали */
+  .table td[colspan] {
+    text-align: center;
+    font-weight: bold;
+    color: #FFFFFF; /* Цвет текста для объединенных ячеек */
+  }
+  
