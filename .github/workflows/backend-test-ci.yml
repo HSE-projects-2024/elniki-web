@@ -34,9 +34,6 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Change directory to backend
-        working-directory: web-elniki-back
-
       - name: Install backend dependencies
         run: npm install
         working-directory: web-elniki-back
@@ -50,6 +47,7 @@ jobs:
       - name: Run backend tests
         env:
           DATABASE_HOST: localhost
+          DATABASE_USER: root
           DATABASE_NAME: skiresortapp
         run: npm test -- --detectOpenHandles
         working-directory: web-elniki-back
