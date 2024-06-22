@@ -42,6 +42,10 @@ jobs:
         working-directory: web-elniki-back
 
       - name: Start backend application
+        env:
+          DATABASE_HOST: localhost
+          DATABASE_USER: root
+          DATABASE_NAME: skiresortapp
         run: |
           npm start &
           sleep 5
