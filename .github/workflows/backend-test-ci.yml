@@ -36,7 +36,9 @@ jobs:
           node-version: '20.11.1'
 
       - name: Install backend dependencies
-        run: npm install
+        run: |
+          npm install
+          npm rebuild bcrypt --build-from-source
         working-directory: web-elniki-back
 
       - name: Start backend application
