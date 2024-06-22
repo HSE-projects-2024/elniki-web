@@ -24,16 +24,23 @@ router.post('/reg', async (req, res) => {
         Email,
         Password
     } = req.body;
-    Password = await bcrypt.hash(Password, 10);
     conn.query(
-        'INSERT INTO users (Name, Surname, Email, Password) VALUES (?, ?, ?, ?)',
-        [Name, Surname, Email, Password], (err, result) => {
-            if (err) {
-                console.error('Ошибка при регистрации пользователя:', err);
-                return res.status(500).json({ error: 'Ошибка сервера' });
+        'SELECT * FROM users WHERE Email = ?', [Email], async (err, user) => {
+            if (user.length > 0) {
+                return res.status(401).json({ message: 'Неверные данные' });
             }
-            res.json({ Email, Password });
-        });
+            Password = await bcrypt.hash(Password, 10);
+            conn.query(
+                'INSERT INTO users (Name, Surname, Email, Password) VALUES (?, ?, ?, ?)',
+                [Name, Surname, Email, Password], (err, result) => {
+                    if (err) {
+                        console.error('Ошибка при регистрации пользователя:', err);
+                        return res.status(500).json({ error: 'Ошибка сервера' });
+                    }
+                    res.json({ Email, Password });
+                });
+        }
+    )
 });
 
 // POST запрос для авторизации пользователя
