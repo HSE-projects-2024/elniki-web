@@ -1,0 +1,55 @@
+name: Tests CI
+
+on:
+  push:
+    branches:
+      - main
+      - preparation
+      - user-back
+  pull_request:
+    branches:
+      - main
+      - preparation
+
+jobs:
+  backend:
+    name: Backend tests CI
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_DATABASE: skiresortapp
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping --silent" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Change directory to backend
+        working-directory: web-elniki-back
+
+      - name: Install backend dependencies
+        run: npm install
+        working-directory: web-elniki-back
+
+      - name: Start backend application
+        run: |
+          npm start &
+          sleep 5
+        working-directory: web-elniki-back
+
+      - name: Run backend tests
+        env:
+          DATABASE_HOST: localhost
+          DATABASE_NAME: skiresortapp
+        run: npm test -- --detectOpenHandles
+        working-directory: web-elniki-back
