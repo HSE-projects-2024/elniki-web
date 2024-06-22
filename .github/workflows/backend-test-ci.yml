@@ -45,6 +45,7 @@ jobs:
         env:
           DATABASE_HOST: localhost
           DATABASE_USER: root
+          DATABASE_PASSWORD: root
           DATABASE_NAME: skiresortapp
         run: |
           npm start &
@@ -55,6 +56,7 @@ jobs:
         env:
           DATABASE_HOST: localhost
           DATABASE_USER: root
+          DATABASE_PASSWORD: root
           DATABASE_NAME: skiresortapp
         run: npm test -- --detectOpenHandles
         working-directory: web-elniki-back
