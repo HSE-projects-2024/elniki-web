@@ -1,0 +1,45 @@
+name: Backend tests CI
+
+on:
+  push:
+    branches:
+      - user-back
+      - preparation
+      - main
+  pull_request:
+    branches:
+      - preparation
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: skiresortapp
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping --silent" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        env:
+          DATABASE_HOST: localhost
+          DATABASE_USER: root
+          DATABASE_NAME: skiresortapp
+        run: npm test
