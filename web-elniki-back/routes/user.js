@@ -44,29 +44,35 @@ router.post('/reg', async (req, res) => {
 });
 
 // POST запрос для авторизации пользователя
-router.post('/login', (req, res) => {
-    const {
-        Email,
-        Password
-    } = req.body;
-    conn.query(
-        'SELECT * FROM users WHERE Email = ?', [Email], async (err, user) => {
+router.post('/login', async (req, res) => {
+    const { Email, Password } = req.body;
+
+    try {
+        conn.query('SELECT * FROM users WHERE Email = ?', [Email], async (err, results) => {
             if (err) {
                 console.error('Ошибка при авторизации пользователя:', err);
                 return res.status(500).json({ error: 'Ошибка сервера' });
             }
-            if (!user) {
+
+            if (results.length === 0) {
                 return res.status(401).json({ message: 'Неверные данные' });
             }
-            const isValidPassword = await bcrypt.compare(Password, user[0].Password);
+
+            const user = results[0];
+
+            const isValidPassword = await bcrypt.compare(Password, user.Password);
+
             if (isValidPassword) {
-                const token = jwt.sign({ userId: user[0].UserID }, process.env.JWT_SECRET, { expiresIn: '7d' });
-                res.json({ token });
-            }
-            else {
+                const token = jwt.sign({ userId: user.UserID }, process.env.JWT_SECRET, { expiresIn: '7d' });
+                return res.json({ token });
+            } else {
                 return res.status(401).json({ message: 'Неверные данные' });
             }
         });
+    } catch (error) {
+        console.error('Ошибка при авторизации пользователя:', error);
+        return res.status(500).json({ error: 'Ошибка сервера' });
+    }
 });
 
 module.exports = router;
