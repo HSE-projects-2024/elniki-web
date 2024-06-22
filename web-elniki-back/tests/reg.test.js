@@ -30,4 +30,19 @@ describe('POST /reg', () => {
             expect(res.length).toBe(1);
         });
     });
+
+    it('should register a new user with an existing email', async () => {
+        const newUser = {
+            Name: 'Test',
+            Surname: 'Test',
+            Email: 'test@test.test',
+            Password: 'password123',
+        };
+
+        const response = await request(app)
+            .post('/reg')
+            .send(newUser);
+
+        expect(response.status).toBe(401);
+    });
 });
