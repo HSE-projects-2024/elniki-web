@@ -6,12 +6,13 @@ import { Link } from 'react-router-dom';
 
 const RegPage = () => {
     return (
+        <body class="body-page2">
         <div>
             <div className='reg-head'>
                 <h1>Регистрация</h1>
             </div>
             <div className='reg-main'>
-                <p>Уже есть аккаунт? <Link to="/">Войти</Link></p>
+                <p>Уже есть аккаунт? <Link to="/login">Войти</Link></p>
                 <Form>
                     <Form.Label>Имя</Form.Label>
                     <Form.Control type="text" />
@@ -33,10 +34,11 @@ const RegPage = () => {
                     <Form.Control type="password" />
                 </Form>
             </div>
-            <div className='text-center'>
+            <p className='text-center'>
                 <Button variant="dark" size="lg">Зарегистрироваться</Button>
-            </div>
+            </p>
         </div>
+        </body>
     );
 }
 

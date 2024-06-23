@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom';
 
 const LogPage = () => {
     return (
-        <div>
+        <body class="body-page2">
+        <div className='background-page1'>
             <div className='log-head'>
                 <h1>Авторизация</h1>
             </div>
@@ -19,17 +20,16 @@ const LogPage = () => {
                     <Form.Label>Пароль</Form.Label>
                     <Form.Control type="password" />
                 </Form>
-                <Form>
-                    <Form.Group>
-                        <Form.Check label="Запомнить меня" />
-                    </Form.Group>
-                </Form>
+                <p className='checkbox'>
+                    <Form.Check label="Запомнить меня" />
+                </p>
             </div>
-            <div className='text-center'>
+            <div>
                 <Button variant="dark" size="lg">Войти</Button>
             </div>
-            <p>Еще нет аккаунта? <Link to="/reg">Зарегистрироваться</Link></p>
+            <p className='text-center'>Еще нет аккаунта? <Link to="/reg">Зарегистрироваться</Link></p>
         </div>
+        </body>
     );
 }
 

@@ -1,0 +1,36 @@
+.form-control {
+    width: 130%;
+    color: black;
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* разделение на две колонки */
+    grid-gap: 5px; /* если нужен отступ между элементами */
+  }
+
+  ::placeholder {
+    color: black;
+    font-size: 1.1em;
+  }
+  
+  :-ms-input-placeholder {
+    color: black;
+  }
+  
+  ::-ms-input-placeholder {
+    color: black;
+  }
+
+  .credit-card-input::placeholder {
+    color: black;
+  }
+  
+  .error-msg {
+    color: aliceblue;; /* Цвет текста - красный */
+    font-size: 17px; /* Размер шрифта */
+    margin-top: 5px; /* Отступ сверху */
+    background-color:  red;
+    border-radius: 5%;
+    width: 220px;
+  }
