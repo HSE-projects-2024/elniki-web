@@ -1,12 +1,12 @@
 .resort-container2 {
     position: relative;
     width: 100%;
-    height: 450vh; /* Высота блока, можно изменить */
+    height: 450vh; 
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background-color: #032C4A;
+    background-color: var(--blue600);
 }
 
 .background-block2 {
@@ -14,94 +14,84 @@
     z-index: 1;
 }
 .green-block {
-    top: 77%;
+    top: 80%;
     left: 20%;
     width: 80%;
     height: 19%;
-    background-color: #63804D; 
+    background-color: var(--Green400); 
 }
 
 .white-block2 {
-    top: 65%;
-    left: 0%;
+    top: 75%;
     width: 100%;
-    height: 35%;
-    background-color: #fff; /* Белый цвет */
+    height: 25%;
+    background-color: var(--white); /* Белый цвет */
 }
 .white-block22 {
-    top: 30%;
-    left: 0%;
+    top: 40%;
     width: 100%;
     height: 10%;
-    background-color: #fff; /* Белый цвет */
+    background-color: var(--white); /* Белый цвет */
 }
 
 .Brownish-block {
-    top: 40%;
-    right: 0;
+    top: 50%;
     width: 100%;
     height: 25%;
-    background-color: #272022;
+    background-color: var(--Brownish600);
 }
 
 .image-Kasina-container {
     position: absolute;
     z-index: 2;
-    bottom: 57%;
+    bottom:47%;
 }
 .table-container {
     position: relative;
     z-index: 2;
-    bottom: 36%;
+    bottom: 31%;
+    background-color: var(--blue600); 
+    padding: var(--xxlarge);
+    max-width:1050px ;
+    min-width:950px;
 }
+
+.table .table-bordered {
+    color: var(--blue600);
+}
+
 .map-container {
     position: absolute;
     z-index: 3;
-    bottom: 40%;
+    bottom: 30%;
 }
 .last-container {
     position: absolute;
     z-index: 3;
-    bottom: 5%;
-}
-.skier-image2 {
-    width: 600px; 
-    height: auto;
+    bottom: 2%;
 }
 
 .skipass-button {
     position: absolute;
-    top:41%;
-    padding: 20px 30px;
-    background-color: #F89434; /* Цвет кнопки */
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    font-size: 29px;
-    z-index: 3;
-    cursor: pointer;
+    top:50%;
+    background-color: var(--orange600); /* Цвет кнопки */
+    color: var(--white);
 }
 
 .skipass-button:hover {
-    background-color: #032C4A; 
+    background-color: var(--blue600);
 }
 
 .contact-button {
     position: absolute;
-    top:62%;
-    padding: 20px 30px;
-    background-color: #DC725D; /* Цвет кнопки */
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    font-size: 29px;
-    z-index: 3;
-    cursor: pointer;
+    top:72%;
+    background-color: var(--Green400); /* Цвет кнопки */
+    color: var(--white);
 }
 
 .contact-button:hover {
-    background-color: #C7F5FF; 
-    color: #272022;
+    background-color: var(--blue300); 
+    color: var(--Brownish600);
 }
 
 /* Основные стили для таблицы */
@@ -109,47 +99,47 @@
     width: 600px;
     height: auto;
     margin-bottom: 1rem;
-    color: #032C4A;
     border-collapse: collapse;
-    font-size: 28px;
+    font-size: var(--large);
+    border: 5px solid var(--white);
   }
   
-  /* Границы таблицы */
-  .table-bordered {
-    border: 5px solid #C7F5FF;
-  }
   
   /* Заголовки таблицы */
   .table thead th {
-    vertical-align: bottom;
-    border-bottom: 2px solid #C7F5FF;
-    background-color: #032C4A;
-    color: #FFFFFF; /* Цвет текста в заголовках */
+    border-bottom: 2px solid var(--white);
+    background-color: var(--blue600);
+    color: var(--white); /* Цвет текста в заголовках */
     font-weight: bold;
-    text-align: left;
-    padding: 20px 20px;
-    border-right: 2px solid #C7F5FF; /* Вертикальные разделители */
-  }
+    text-align: center;
+    padding: var(--medium) var(--medium);
+    border-right: 2px solid var(--white); /* Вертикальные разделители */
+}
   
   /* Стили для строк и ячеек таблицы */
-  .table tbody tr {
-    border-top: 2px solid #C7F5FF;
+  .table tbody td {
+    border-top: 2px solid var(--white);
+    border-bottom: 2px solid var(--white);
+    background-color: var(--blue600);
+    color: var(--white); /* Цвет текста в заголовках */
+    font-weight: bold;
+    text-align: center;
+    padding: var(--medium) var(--medium);
+    border-right: 2px solid var(--blue300); /* Вертикальные разделители */
   }
   
   .table tbody td, 
   .table tbody th {
     padding: 0.75rem;
     vertical-align: top;
-    border-top: 1px solid #C7F5FF;
-    color: #FFFFFF; /* Цвет текста в ячейках */
-    padding: 20px 20px;
-    border-right: 2px solid #C7F5FF; /* Вертикальные разделители */
+    border-top: 1px solid var(--white);
+    color: var(--white); 
+    padding: var(--medium) var(--medium);
+    border-right: 2px solid var(--white); 
   }
         
   /* Стили для ячеек, объединенных по горизонтали */
   .table td[colspan] {
     text-align: center;
-    font-weight: bold;
-    color: #FFFFFF; /* Цвет текста для объединенных ячеек */
   }
   

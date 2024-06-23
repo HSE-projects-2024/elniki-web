@@ -2,7 +2,7 @@
 import './Developedoffer.css'; // Подключаем файл со стилями
 
 import ski2 from './../img/skiingpass.jpg';
-import ski3 from './../img/Rectangle 1 (1).png'; // Добавьте дополнительные изображения
+
 
 const Developedoffer = () => {
     return (
@@ -16,11 +16,10 @@ const Developedoffer = () => {
                         <li className="content-list__image">
                             <div className="multi-layered-block">
                                 <img src={ski2} alt="Layer 2" className="layer layer2" />
-                                <img src={ski3} alt="Layer 1" className="layer layer1" />
+                                
                                 <div className="text-overlay">SKIPASS</div>
                             </div>
                         </li>
-   
                     </ul>
                     <li className="content-list__item">
                         <p className="left-align width">
@@ -29,7 +28,7 @@ const Developedoffer = () => {
                             Загляните к нам, и вы получите доступ к <span className="bold-colored-text">бесконечному веселью</span> на наших склонах в течение <span className="colored-text">всего сезона</span>!
                         </p>      
                     </li>
-                    <a href="./services.html" className="btn ">Смотреть</a>
+                    <a href="./services" className="button ">Смотреть</a>
                 </ul>
             </div>
         </main>

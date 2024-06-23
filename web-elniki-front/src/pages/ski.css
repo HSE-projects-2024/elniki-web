@@ -1,12 +1,12 @@
 .resort-container {
     position: relative;
     width: 100%;
-    height: 100vh; /* Высота блока, можно изменить */
+    height: 80vh; /* Высота блока, можно изменить */
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background-color: #fff; /* Белый фон для контейнера */
+    background-color: var(--white); /* Белый фон для контейнера */
 }
 
 .background-block {
@@ -19,30 +19,29 @@
     left: 0;
     width: 45%;
     height: 70%;
-    background-color: #032C4A; /* Темно-синий цвет */
+    background-color: var(--blue600); /* Темно-синий цвет */
 }
 .blue-block2 {
     top: 80%;
     left: 0;
     width: 100%;
-    height: 20%;
-    background-color: #032C4A; /* Темно-синий цвет */
+    height: 25%;
+    background-color: var(--blue600); /* Темно-синий цвет */
 }
 .white-block {
     top: 0;
     left: 50%;
     width: 50%;
     height: 90%;
-    background-color: #fff; /* Белый цвет */
+    background-color: var(--white); /* Белый цвет */
 }
-
 
 .red-block {
     top: 35%;
     right: 0;
     width: 40%;
     height: 50%;
-    background-color: #DC725D; /* Красный цвет */
+    background-color: var(--pink600); /* Красный цвет */
 }
 
 .image-container {
@@ -50,25 +49,16 @@
     z-index: 2;
 }
 
-.skier-image {
-    width: 600px; /* Примерный размер изображения, можно изменить */
-    height: auto;
-}
-
 .resort-button {
     position: absolute;
-    bottom: 15%;
-    padding: 20px 30px;
-    background-color: #C7F5FF; /* Цвет кнопки */
-    color: #171718;
-    border: none;
-    border-radius: 20px;
-    font-size: 29px;
-    z-index: 3;
-    cursor: pointer;
+    bottom: 10%;
+    background-color: var(--blue300); /* Цвет кнопки */
+    color: var(--black);
+    border-radius: var(--medium);
+    font-size: var(--xlarge);
 }
 
 .resort-button:hover {
-    background-color: #DC725D;
-    color: #fff; 
+    background-color: var(--pink600);
+    color: var(--white); 
 }

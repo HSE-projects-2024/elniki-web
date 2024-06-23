@@ -5,48 +5,50 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #ffffff; 
+	background-color: var(--white); 
 	background-image: url('./../../img/header.jpg');
 	background-repeat: no-repeat;
 	background-size: cover; 
 	background-position: center center;
-	border-bottom: 1px solid #F89434;
-	color: #FFFFFF; 
+	border-bottom: 1px solid var(--accent);
+	color: var(--white); 
 	text-align: center;
 	overflow: hidden;
+	width: 100vw;
 }
 
 .header__wrapper {
+	align-items: center;
 	padding: 0 15px;
 	max-width: 660px;
 }
 
 .header__title {
-	margin-bottom: 20px;
-	font-family: 'Alegreya';
-	font-style: normal;
-	font-weight: 500;
+	margin-bottom: var(--medium);
+	font-family: 'Alice';
+	font-weight: 600;
 	font-size: 56px;
 	line-height: 56px;
 }
 
 .header__title strong {
 	font-size: 60px;
-	font-weight: 700;
-	color: #3591A5;
-}
-
-.header__title em {
-	font-style: normal;
-	color: #3591A5; 
+	color: var(--blue400);
 }
 
 .header__text {
 	margin-bottom: 40px;
-	font-size: 18px;
-	line-height: 1.333;
+	font-size: var(--medium);
 }
 
 .header__text p + p {
 	margin-top: 0.5em;
+}
+.header-button {
+    background-color: var(--blue400); /* Цвет кнопки */
+    color: var(--white);
+}
+
+.header-button:hover {
+    background-color: var(--orange600);
 }

@@ -12,6 +12,13 @@
 	--pink600 : #DC725D;
 	--Green400 : #63804D;
     --Brownish600 : #272022;
+    
+    /* Font size */
+    --small: 16px;
+	--medium: 20px;
+	--large: 24px;
+	--xlarge : 28px;
+	--xxlarge : 32px;
 
 	--page-bg: var(--white);
 	--text-color: var(--black);
@@ -24,12 +31,9 @@ html,
 body {
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
-
 	font-family: 'Raleway';
 	font-style: normal;
 	letter-spacing: -0.5px;
-
 	background-color: var(--page-bg);
 	color: var(--text-color);
 }
@@ -55,36 +59,34 @@ body {
 	font-size: 74px;
 	font-weight: 300;
 	color: var(--title-1);
-	line-height: 30px;
+	line-height: var(--xxlarge);
 	text-align: center;
 	font-family: 'Alice';
 	font-style: normal;
 }
 
 .title-2 {
-	margin-bottom: 20px;
-	font-size: 54px;
-	font-weight: 300;
+	margin-bottom: var(--medium);
+	font-size: var(--medium);
+	font-weight: 600;
 	color: var(--title-2);
-	line-height: 30px;
+	line-height: var(--medium);
 	text-align: center;
-	font-family: 'Alice';
 	font-style: normal;
 }
 .bold-text {
     font-weight: 700; /* Жирный текст */
-	font-size: 40px;
+	font-size: var(--xxlarge);
 }
 .left-align {
     text-align: left;
-
 }
 .colored-text {
-    color: #3591A5;
+    color: var(--blue400);
 }
 
 .content-list__item {
-	font-size: 24px;
+	font-size: var(--large);
 	line-height: 1.5;
 }
 
@@ -93,7 +95,7 @@ body {
     flex-direction: row; /* Размещает элементы по горизонтали */
     justify-content: center; /* Центрирует элементы по горизонтали */
     align-items: center; /* Центрирует элементы по вертикали */
-    gap: 10px; /* Расстояние между элементами */
+    gap: var(--medium); /* Расстояние между элементами */
     text-align: center; /* Центрирует текст внутри элементов */
 }
 
@@ -101,28 +103,49 @@ body {
     display: flex;
     flex-direction: column; /* Размещает элементы по вертикали */
     align-items: center; /* Центрирует элементы по горизонтали */
-    gap: 60px; /* Расстояние между элементами */
     text-align: center; /* Центрирует текст внутри элементов */
 }
 
 /* Button styles */
-.btn {
-    display: inline-block;
-    
-    padding: 10px 20px;
-    color: #ffffff;  
-    background-color: #3591A5; 
+.button {
+    display: absolute;
+    padding: var(--small) var(--large);
     border: none;   
-    border-radius: 20px; 
-    font-size: 24px;
+    border-radius: var(--medium); 
+    font-size: var(--xxlarge);
     z-index: 3;
     cursor: pointer;
 }
 
-.btn:hover {
-    background-color: #032C4A;
+.Large-img{
+    width: 600px; /* Ширина большой картинки */
+    height: auto; 
 }
 
+/* Стиль для маленького текста */
+.font-size-small {
+    font-size: var(--small);
+  }
+  
+  /* Стиль для нормального текста */
+  .font-size-medium {
+    font-size: var(--medium);
+  }
+  
+  /* Стиль для большого текста */
+  .font-size-large {
+    font-size: var(--large);
+  }
+  
+  /* Стиль для очень большого текста */
+  .font-size-xlarge {
+    font-size: var(--xlarge);
+  }
+  
+  /* Стиль для огромного текста */
+  .font-size-xxlarge {
+    font-size: var(--xxlarge);
+  }
 
 
 
