@@ -9,10 +9,6 @@
     background-color: var(--blue600);
 }
 
-.background-block2 {
-    position: absolute;
-    z-index: 1;
-}
 .green-block {
     top: 80%;
     left: 20%;
@@ -49,7 +45,7 @@
 .table-container {
     position: relative;
     z-index: 2;
-    bottom: 31%;
+    bottom: 0%;
     background-color: var(--blue600); 
     padding: var(--xxlarge);
     max-width:1050px ;
@@ -63,7 +59,7 @@
 .map-container {
     position: absolute;
     z-index: 3;
-    bottom: 30%;
+    bottom: 50%;
 }
 .last-container {
     position: absolute;
@@ -82,14 +78,14 @@
     background-color: var(--blue600);
 }
 
-.contact-button {
+.contacttt-button {
     position: absolute;
-    top:72%;
+    bottom:28%;
     background-color: var(--Green400); /* Цвет кнопки */
     color: var(--white);
 }
 
-.contact-button:hover {
+.contacttt-button:hover {
     background-color: var(--blue300); 
     color: var(--Brownish600);
 }

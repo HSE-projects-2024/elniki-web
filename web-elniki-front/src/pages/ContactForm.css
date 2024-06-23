@@ -1,0 +1,52 @@
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    margin: 0 auto;
+}
+
+.contact-form label {
+    margin-bottom: 10px;
+}
+
+.contact-form textarea {
+    width: 100%;
+    height: 100px;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form .checkboxes {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.contact-form .checkboxes label {
+    margin-bottom: 5px;
+}
+
+.contact-form .error {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.contact-button {
+    position:static;
+    background-color: var(--blue400); /* Цвет кнопки */
+    color: var(--white);
+}
+.contact-button:hover {
+    background-color: var(--blue600);
+    color: var(--white);
+}

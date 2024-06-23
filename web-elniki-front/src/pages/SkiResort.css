@@ -9,11 +9,6 @@
     background-color: var(--white); /* Белый фон для контейнера */
 }
 
-.background-block {
-    position: absolute;
-    z-index: 1;
-}
-
 .blue-block {
     top: 0;
     left: 0;

@@ -71,6 +71,7 @@ body {
 	font-weight: 600;
 	color: var(--title-2);
 	line-height: var(--medium);
+    line-height: 1.2;
 	text-align: center;
 	font-style: normal;
 }
@@ -104,6 +105,11 @@ body {
     flex-direction: column; /* Размещает элементы по вертикали */
     align-items: center; /* Центрирует элементы по горизонтали */
     text-align: center; /* Центрирует текст внутри элементов */
+}
+
+.background-block {
+    position: absolute;
+    z-index: 1;
 }
 
 /* Button styles */

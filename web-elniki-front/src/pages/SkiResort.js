@@ -1,6 +1,6 @@
 import React from 'react';
-import './ski.css';
-import skier from './../img/skierw.svg'; // замените на ваше изображение
+import './SkiResort.css';
+import skier from './../img/skierw.svg'; 
 
 const SkiResort = () => {
     return (
