@@ -1,6 +1,6 @@
 import React from 'react';
 import "./DropDownMenu.css";
-
+import Exit from "./../../img/Exit.svg";
 import close from "./../../img/closemenu.svg";
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 
@@ -66,7 +66,7 @@ const DropDownMenu = ({ setOpenMenu }) => {
                         </li>
                         <li className="nav-list__item">
                             <Link to="#" onClick={handleLogoutAndRedirectToReg}>
-                                <img src={close} className='closeButton' alt="Close" />
+                                <img src={Exit} className='closeButton' alt="Close" />
                             </Link>
                         </li>
                     </>

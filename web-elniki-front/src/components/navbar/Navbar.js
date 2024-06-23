@@ -29,6 +29,7 @@ const Navbar = () => {
 
     useEffect(() => {
         setActivePath(window.location.pathname);
+        setOpenProfile(false);
         setOpenMenu(false);
     }, [window.location.pathname]);
 
@@ -70,7 +71,7 @@ const Navbar = () => {
                         </li>
                         {jwtToken && (
                             <li className="nav-list__item">
-                                <NavLink to="/skipass" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"}>
+                                <NavLink to="/myskipass" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"}>
                                     Мои скипассы
                                 </NavLink>
                             </li>
