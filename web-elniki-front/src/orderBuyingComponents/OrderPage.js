@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
 import './Order.css';
 import Calendar from '../components/Calendar';
+import config from '../config';
 
 export const OrderPage = () => {
     const [date, setDate] = useState(null);
     const [skipAssTypes, setSkipAssTypes] = useState([]);
     const [selectedType, setSelectedType] = useState('');
-    const [quantity, setQuantity] = useState(1); // Добавляем состояние для хранения количества
-    const [price, setPrice] = useState(0); // Добавляем состояние для хранения цены
+    const [quantity, setQuantity] = useState(1);
 
     useEffect(() => {
-        fetch('http://localhost:5000/getSkipassTypes')
+        fetch(config.orderUrl)
             .then(response => response.json())
             .then(data => setSkipAssTypes(data))
             .catch(error => console.error('Error fetching skipass types: ', error));
@@ -27,13 +26,11 @@ export const OrderPage = () => {
     };
 
     const handleOrderClick = () => {
-        // Передача данных на страницу /buy
         const orderData = {
             selectedType,
             quantity,
             date
         };
-        // encodeURIComponent используется для корректной передачи параметров URL
         const queryParams = new URLSearchParams(orderData).toString();
         window.location.href = `/buy?${queryParams}`;
         window.location.href = `/payment?${queryParams}`;
