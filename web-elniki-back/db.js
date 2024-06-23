@@ -1,4 +1,4 @@
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
 // Подключение к БД
 var conn = mysql.createConnection({
