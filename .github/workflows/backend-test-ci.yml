@@ -3,7 +3,6 @@ name: Back tests CI
 on:
   push:
     branches:
-      - user-back
   pull_request:
     branches:
       - main
