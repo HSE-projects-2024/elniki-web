@@ -1,10 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const connection = require('../db');
+const authenticateToken = require('../middleware/authMiddleware');
 
-
-
-router.post('/purchaseSkipass', (req, res) => {
+router.post('/purchaseSkipass', authenticateToken, (req, res) => {
     const { userId, selectedType, quantity, date } = req.body;
     const purchaseDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
     const startDate = new Date(date).toISOString().slice(0, 19).replace('T', ' ');

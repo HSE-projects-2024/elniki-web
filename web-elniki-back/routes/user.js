@@ -3,10 +3,11 @@ const router = express.Router();
 const conn = require('../db');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const authenticateToken = require('../middleware/authMiddleware');
 require('dotenv').config();
 
 // GET запрос для получения всех пользователей
-router.get('/users', (req, res) => {
+router.get('/users', authenticateToken, (req, res) => {
     conn.query('SELECT * FROM users', (err, result) => {
         if (err) {
             console.error('Ошибка при получении пользователей:', err);

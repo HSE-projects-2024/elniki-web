@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const connection = require('../db');
+const authenticateToken = require('../middleware/authMiddleware');
 
-router.get('/getSkipassPrice', (req, res) => {
+router.get('/getSkipassPrice', authenticateToken, (req, res) => {
     const { SkiPassTypeId, quantity } = req.query;
 
     if (isNaN(Number(SkiPassTypeId)) || !Number.isInteger(Number(SkiPassTypeId))) {
