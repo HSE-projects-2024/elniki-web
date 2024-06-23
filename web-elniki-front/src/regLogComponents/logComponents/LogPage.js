@@ -16,6 +16,7 @@ const LogPage = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
+      
         setUser(prevState => ({
             ...prevState,
             [name]: value

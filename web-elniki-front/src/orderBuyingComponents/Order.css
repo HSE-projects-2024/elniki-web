@@ -8,7 +8,7 @@
 }
 
 
-div {
+.forma {
   font-family: 'Georgia', serif;
   margin: auto;
   display: flex;
@@ -102,4 +102,3 @@ h1 {
   height: 50px;
   justify-content: center;
 }
-
