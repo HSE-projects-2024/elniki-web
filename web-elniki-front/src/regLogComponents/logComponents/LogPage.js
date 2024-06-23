@@ -16,7 +16,7 @@ const LogPage = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-      
+
         setUser(prevState => ({
             ...prevState,
             [name]: value
@@ -29,22 +29,19 @@ const LogPage = () => {
     };
 
     const handleSubmit = async (e) => {
+        localStorage.clear();
+        sessionStorage.clear();
         e.preventDefault();
         try {
             const response = await axios.post(config.loginUrl, user);
             console.log(response.data);
             if (response.data.jwtToken) {
                 if (rememberMe) {
-                    localStorage.setItem('userData', JSON.stringify({
-                        UserID: response.data.UserID,
-                        jwtToken: response.data.jwtToken
-                    }));
+                    localStorage.setItem('jwtToken', response.data.jwtToken);
                 } else {
-                    sessionStorage.setItem('userData', JSON.stringify({
-                        UserID: response.data.UserID,
-                        jwtToken: response.data.jwtToken
-                    }));
+                    sessionStorage.setItem('jwtToken', response.data.jwtToken);
                 }
+                console.log(localStorage.getItem('jwtToken'));
                 navigate('/');
             }
         } catch (error) {
