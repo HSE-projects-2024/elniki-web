@@ -106,18 +106,17 @@ body {
     flex-direction: row; /* Размещает элементы по горизонтали */
     justify-content: center; /* Центрирует элементы по горизонтали */
     align-items: center; /* Центрирует элементы по вертикали */
-
     gap: var(--medium); /* Расстояние между элементами */
-
     text-align: center; /* Центрирует текст внутри элементов */
+    list-style:none;
 }
 
 .vertical-list {
     display: flex;
     flex-direction: column; /* Размещает элементы по вертикали */
     align-items: center; /* Центрирует элементы по горизонтали */
-
     text-align: center; /* Центрирует текст внутри элементов */
+    list-style:none;
 }
 
 .background-block {
@@ -167,9 +166,6 @@ body {
   .font-size-xxlarge {
     font-size: var(--xxlarge);
   }
-
-
-
 
 /* Media Queries for Responsive Design */
 

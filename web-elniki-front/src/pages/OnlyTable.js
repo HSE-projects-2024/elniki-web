@@ -8,7 +8,7 @@ const OnlyTable = () => {
     useEffect(() => {
         const fetchSkipassTypes = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/getSkipasses');
+                const response = await axios.get('http://localhost:3001/getSkipasses');
                 setSkipassTypes(response.data);
             } catch (error) {
                 console.error('Ошибка при получении данных:', error);

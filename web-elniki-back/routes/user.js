@@ -64,7 +64,7 @@ router.post('/login', async (req, res) => {
 
             if (isValidPassword) {
                 const token = jwt.sign({ userId: user.UserID }, process.env.JWT_SECRET, { expiresIn: '7d' });
-                return res.json({ userId: user.UserID, jwtToken: token });
+                return res.json({ UserID: user.UserID, jwtToken: token });
             } else {
                 return res.status(401).json({ message: 'Неверные данные' });
             }
@@ -73,6 +73,46 @@ router.post('/login', async (req, res) => {
         console.error('Ошибка при авторизации пользователя:', error);
         return res.status(500).json({ error: 'Ошибка сервера' });
     }
+});
+
+router.post('/submitContactForm', async (req, res) => {
+    const { message, email, sendCopy } = req.body;
+
+    try {
+        // Вставляем данные в таблицу contacts
+        conn.query(
+            'INSERT INTO contacts (Message, Email, SendCopy) VALUES (?, ?, ?)',
+            [message, email, sendCopy],
+            (err, results) => {
+                if (err) {
+                    console.error('Ошибка при вставке данных в таблицу contacts:', err);
+                    return res.status(500).json({ error: 'Ошибка сервера' });
+                }
+                // В случае успешной вставки возвращаем успешный ответ
+                return res.status(200).json({ message: 'Данные успешно добавлены в таблицу contacts' });
+            }
+        );
+    } catch (error) {
+        console.error('Ошибка при обработке данных формы:', error);
+        return res.status(500).json({ error: 'Ошибка сервера' });
+    }
+});
+
+// Маршрут для получения данных скипассов
+router.get('/getSkipasses', (req, res) => {
+    const query = `
+        SELECT s.SkiPassID, s.ValidityPeriod, s.Price, s.Description, st.skiPassType, s.ChildPrice
+        FROM skipasses s
+        JOIN skipasstypes st ON s.SkiPassTypeId = st.id;
+    `;
+    conn.query(query, (err, results) => {
+        if (err) {
+            console.error('Ошибка выполнения запроса:', err);
+            res.status(500).send('Ошибка сервера');
+            return;
+        }
+        res.json(results);
+    });
 });
 
 module.exports = router;

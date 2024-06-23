@@ -1,87 +1,86 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink, useLocation, Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import acc from "./../../img/icons/Account.png";
 import menuIcon from "./../../img/menu1.svg";
 import "./style.css";
-
 import DropDownMenu from '../DropDownMenu/DropDownMenu';
-
+import Profile from '../Profile/Profile';
 
 const Navbar = () => {
-  const location = useLocation();
-  const [activePath, setActivePath] = useState(location.pathname);
+    const [activePath, setActivePath] = useState(window.location.pathname);
+    const [openMenu, setOpenMenu] = useState(false);
+    const [openProfile, setOpenProfile] = useState(false);
+    const [jwtToken, setJwtToken] = useState(null); // Для хранения токена
 
-  const [openMenu, setOpenMenu] = useState(false);
+    useEffect(() => {
+        const token = localStorage.getItem('jwtToken') || sessionStorage.getItem('jwtToken');
+        console.log(token);
+        console.log(localStorage.getItem("jwtToken"))
+        setJwtToken(token); // Устанавливаем токен в состояние
+    }, []);
 
-  useEffect(() => {
-    setActivePath(location.pathname);
-    setOpenMenu(false);
+    const handleAccountClick = () => {
+        if (jwtToken) {
+            setOpenProfile(!openProfile);
+        } else {
+            window.location.href = './login';
+        }
+    };
 
-  }, [location]);
+    useEffect(() => {
+        setActivePath(window.location.pathname);
+        setOpenMenu(false);
+    }, [window.location.pathname]);
 
-  const getLogoClass = () => {
-    if (activePath === '/') {
-      return 'colored-text-home';
-    } else if (activePath.includes('/services')) {
-      return 'colored-text-services';
-    } else if (activePath.includes('/accommodation')) {
-      return 'colored-text-accommodation';
-    } else {
-      return 'default-text';
-    }
-  };
-
-  return (
-    <nav className="nav">
-
-        <div className="horizontal-list">
-          <NavLink to="/" className="logo">
-            <span className="bold-text">BE<span className={getLogoClass()}>SKI</span>D TIME</span><br />ЕЛЬНИКИ
-          </NavLink>
-          <button className="menu-button" onClick={() => setOpenMenu(!openMenu)}>
-            <img src={menuIcon} alt="Menu" className="menu-icon" />
-          </button>
-          
-          {openMenu && <DropDownMenu setOpenMenu={setOpenMenu}/>}
-          <div className='menu-list'>
-          <ul className= "nav-list">
-
-            <li className="nav-list__item">
-              <NavLink to="/" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"} end>
-                Домашняя страница
-              </NavLink>
-            </li>
-            <li className="nav-list__item">
-              <NavLink to="/services" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"}>
-                Услуги
-              </NavLink>
-            </li>
-            <li className="nav-list__item">
-              <NavLink to="/accommodation" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"}>
-                Проживание
-              </NavLink>
-            </li>
-            <li className="nav-list__item">
-              <NavLink to="/abouttheresort" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"}>
-                О курорте
-              </NavLink>
-            </li>
-            <li className="nav-list__item">
-              <NavLink to="/order" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"}>
-
-                Заказ ски-пасса
-              </NavLink>
-            </li>
-            <Link to="./login" className="account-icon">
-            <img src={acc} />
-          </Link>
-          </ul>
-
-          </div>
-        </div>
-
-    </nav>
-  );
+    return (
+        <nav className="nav">
+            <div className="horizontal-list" style={{ justifyContent: 'center', display: 'flex', margin: 'auto' }}>
+                <NavLink to="/" className="logo">
+                    <span className="bold-text">BE<span className={activePath === '/' ? 'colored-text-home' : ''}>SKI</span>D TIME</span><br />ЕЛЬНИКИ
+                </NavLink>
+                <button className="menu-button" onClick={() => setOpenMenu(!openMenu)}>
+                    <img src={menuIcon} alt="Menu" className="menu-icon" />
+                </button>
+                <Link to="#" className="account-icon" onClick={handleAccountClick}>
+                    <img src={acc} alt="Account" />
+                </Link>
+                {openMenu && <DropDownMenu setOpenMenu={setOpenMenu} />}
+                {openProfile && <Profile setOpenProfile={setOpenProfile} />}
+                <div className='menu-list'>
+                    <ul className="nav-list">
+                        <li className="nav-list__item">
+                            <NavLink to="/" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"} end>
+                                Домашняя страница
+                            </NavLink>
+                        </li>
+                        <li className="nav-list__item">
+                            <NavLink to="/services" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"}>
+                                Услуги
+                            </NavLink>
+                        </li>
+                        <li className="nav-list__item">
+                            <NavLink to="/abouttheresort" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"}>
+                                О курорте
+                            </NavLink>
+                        </li>
+                        <li className="nav-list__item">
+                            <NavLink to="/order" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"}>
+                                Заказ ски-пасса
+                            </NavLink>
+                        </li>
+                        {jwtToken && (
+                            <li className="nav-list__item">
+                                <NavLink to="/skipass" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"}>
+                                    Мои скипассы
+                                </NavLink>
+                            </li>
+                        )}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    );
 };
+
 export default Navbar;
 

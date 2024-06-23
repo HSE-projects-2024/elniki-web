@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import CreditCardForm from "../components/creditCard/CreditCardForm"
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
-import config from '../config';
 
 export const BuyingPage = (props) => {
   const location = useLocation();
@@ -13,18 +12,24 @@ export const BuyingPage = (props) => {
   const quantity = queryParams.get('quantity');
   const date = new Date(queryParams.get('date'));
 
+
   const handlePayment = () => {
+    // Создаем объект с данными для отправки
     const paymentData = {
       selectedType: selectedType,
       quantity: quantity,
       date: date
+      // Добавьте сюда данные банковской карты из CreditCardForm
     };
 
-    axios.post(config.buyingUrl, paymentData)
+    // Отправляем данные на сервер
+    axios.post('http://localhost:5000/purchaseSkipass', paymentData)
       .then(response => {
+        // Обработка успешного ответа
         console.log(response.data);
       })
       .catch(error => {
+        // Обработка ошибки
         console.error(error);
       });
   };

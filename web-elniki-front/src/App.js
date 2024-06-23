@@ -29,12 +29,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path='/order' element={<OrderPage />} />
           <Route path='/buy' element={<BuyingPage />} />
-          <Route path="/services.html" element={<Developedoffer />} />
+          <Route path="/services" element={<Developedoffer />} />
           <Route path='/login' element={<LogPage />} />
           <Route path='/reg' element={<RegPage />} />
-          <Route path="/accommodation" element={<div>Accommodation Page</div>} />
           <Route path="/abouttheresort" element={<About />} />
-          <Route path="/account" element={<div>Account Page</div>} />
           <Route path="/contact" element={<Contact />} />
           <Route path='/payment' element={<PaymentForm />} />
           <Route path="/food" element={<Food />} />

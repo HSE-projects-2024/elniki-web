@@ -8,22 +8,58 @@ const ContactForm = () => {
     const [agreeRODO, setAgreeRODO] = useState(false);
     const [sendCopy, setSendCopy] = useState(false);
     const [error, setError] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        
         if (!message || !email || !notRobot) {
             setError('Пожалуйста, заполните все обязательные поля.');
+            setSuccessMessage(''); // Скрыть сообщение об успешной отправке, если оно было видимо
         } else {
             setError('');
-            // Здесь можно добавить логику отправки данных формы
-            alert('Форма отправлена успешно!');
+            
+            try {
+                const response = await fetch('http://localhost:3001/submitContactForm', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message,
+                        email,
+                        agreeRODO,
+                        sendCopy,
+                    }),
+                });
+
+                if (!response.ok) {
+                    throw new Error('Ошибка при отправке формы');
+                }
+
+                setSuccessMessage('Форма успешно отправлена!');
+
+                // Скрыть сообщение об успешной отправке через 3 секунды
+                setTimeout(() => {
+                    setSuccessMessage('');
+                }, 3000);
+
+                setMessage('');
+                setEmail('');
+                setNotRobot(false);
+                setAgreeRODO(false);
+                setSendCopy(false);
+            } catch (error) {
+                console.error('Ошибка при отправке данных формы:', error);
+                setError('Ошибка при отправке данных формы.');
+            }
         }
     };
 
     return (
         <form onSubmit={handleSubmit} className="contact-form">
             <label>
-            Сообщение *
+                Сообщение *
                 <textarea
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
@@ -31,7 +67,7 @@ const ContactForm = () => {
                 />
             </label>
             <label>
-            Электронный адрес *
+                Электронный адрес *
                 <input
                     type="email"
                     value={email}
@@ -67,7 +103,8 @@ const ContactForm = () => {
                 </label>
             </div>
             {error && <p className="error">{error}</p>}
-            <button type="submit" className='button contact-button'>Отправить</button>
+            {successMessage && <p className="success">{successMessage}</p>}
+            <button type="submit" className="button contact-button">Отправить</button>
         </form>
     );
 };

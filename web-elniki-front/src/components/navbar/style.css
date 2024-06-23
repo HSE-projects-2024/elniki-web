@@ -3,19 +3,17 @@
 	padding: 20px 0;
 	background-color: #fff; /* Укажите нужный цвет фона навигации */
 	border-bottom: 1px solid var(--blue400); /* Укажите нужный цвет границы */
-	color: var(--black); /* Укажите нужный цвет текста */
+	color: var(--black); 
 	letter-spacing: normal;
   }
 
-    
   .logo {
-	color: var(--black); /* Укажите нужный цвет текста */
-
+	color: var(--black); 
 	font-family: 'Alice';
 	font-style: normal;
 	font-weight: 400;
-	font-size: 28px;
-	line-height: 32px;
+	font-size: var(--xlarge);
+	line-height: var(--xxlarge);
   }
   
   .logo strong {
@@ -28,9 +26,8 @@
 	border: none;
 	cursor: pointer;
 	outline: none;
-
 	position: absolute;
-    top: 1rem;
+    top: 2rem;
     right: 3rem;
   }
   
@@ -40,8 +37,8 @@
   }
   
   .menu-button img {
-	width: 30px;
-	height: 30px;
+	width: 50px;
+	height: 50px;
   }
   
   .nav-list {
@@ -88,18 +85,13 @@
   
   .account-icon {
 	position: relative;
-	width: 40px;
-	height: 40px;
+	width: 50px;
+	height: 50px;
 	border-radius: 50%;
-
+	position: absolute;
+    top: 2rem;
+    right: 3rem;
 	background-color: var(--blue400);
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-
-	overflow: hidden;
   }
   
   .account-icon img {
@@ -150,6 +142,10 @@
 	.menu-list {
 	  display: block;
 	}
+	.account-icon{
+		display: block;
+	}
+
 	.nav-list {
 	  display: flex;
 	  flex-wrap: nowrap;
@@ -176,9 +172,12 @@
 	.menu-list {
 	  display: none;
 	}
+	.account-icon{
+		display: none;
+	}
 	.menu-button img {
-	  width: 25px;
-	  height: 25px;
+	  width: 35px;
+	  height: 35px;
 	}
 	.nav-list {
 	  display: none;

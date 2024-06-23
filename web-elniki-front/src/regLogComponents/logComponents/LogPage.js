@@ -16,7 +16,7 @@ const LogPage = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-
+      
         setUser(prevState => ({
             ...prevState,
             [name]: value
@@ -60,8 +60,8 @@ const LogPage = () => {
     };
 
     return (
-        <div className='body-page2'>
-            <div className='background-page1'>
+        <div className="body-page">
+            <div className="log-container ">
                 <div className='log-head'>
                     <h1>Авторизация</h1>
                 </div>
@@ -92,14 +92,16 @@ const LogPage = () => {
                                 {formErrors.message}
                             </div>
                         )}
-                        <p className='checkbox'>
+                        <Form.Group controlId="formRememberMe" className="remember-me">
                             <Form.Check
                                 label="Запомнить меня"
                                 checked={rememberMe}
                                 onChange={handleRememberMe}
                             />
-                        </p>
-                        <Button variant="dark" size="lg" type="submit">Войти</Button>
+                        </Form.Group>
+                        <Button variant="dark" size="lg" type="submit" className="submit-button">
+                            Войти
+                        </Button>
                     </Form>
                 </div>
                 <p className='text-center'>Еще нет аккаунта? <Link to="/reg">Зарегистрироваться</Link></p>

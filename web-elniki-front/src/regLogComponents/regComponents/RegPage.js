@@ -57,35 +57,36 @@ const RegPage = () => {
             errors.Password = true;
             errors.ConfirmPassword = true;
             hasError = true;
-        }
-        if (hasError) {
             setFormErrors({
                 ...errors,
                 message: 'Пароли не совпадают'
             });
             return;
         }
+        if (hasError) {
+            setFormErrors({
+                ...errors,
+                message: 'Заполните все поля'
+            });
+            return;
+        }
         try {
             const response = await axios.post(config.regUrl, user);
             console.log(response.data);
-            return navigate('/login');
+            navigate('/login');
         } catch (error) {
             errors.Email = true;
-            hasError = true;
-            if (hasError) {
-                setFormErrors({
-                    ...errors,
-                    message: 'Пользователь уже зарегистрирован'
-                });
-                return;
-            }
+            setFormErrors({
+                ...errors,
+                message: 'Пользователь уже зарегистрирован'
+            });
             console.error('Ошибка при отправке данных:', error);
         }
     };
 
     return (
-        <body className="body-page2">
-            <div>
+        <div className="body-page">
+            <div className="reg-container">
                 <div className='reg-head'>
                     <h1>Регистрация</h1>
                 </div>
@@ -152,14 +153,15 @@ const RegPage = () => {
                                 {formErrors.message}
                             </div>
                         )}
-                        <Button variant="dark" size="lg" type="submit">
+                        <Button variant="dark" size="lg" type="submit" className="submit-button">
                             Зарегистрироваться
                         </Button>
                     </Form>
                 </div>
             </div>
-        </body>
+        </div>
     );
 }
 
 export default RegPage;
+

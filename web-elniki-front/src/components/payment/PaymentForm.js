@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './PaymentForm.css';
-import axios from 'axios';
-import config from '../../config';
+import axios from 'axios'; 
 
 const PaymentForm = () => {
     const [amount, setAmount] = useState('');
@@ -10,19 +9,21 @@ const PaymentForm = () => {
     const [skiPassPrice, setSkiPassPrice] = useState(0);
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/getSkipassPrice?SkiPassTypeId=${orderData.selectedType}&quantity=${orderData.quantity}`)
-            .then(response => {
-                setSkiPassPrice(response.data.price);
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    }, [orderData.selectedType, orderData.quantity]);
+        axios.get(`http://localhost:5000/getSkipassPrice?SkiPassTypeId=${orderData.selectedType}&quantity=${orderData.quantity}`)
+          .then(response => {
+            setSkiPassPrice(response.data.price);
+          })
+          .catch(error => {
+            console.error(error);
+          });
+      }, [orderData.selectedType, orderData.quantity]);
+  
+    
 
     const handlePaymentSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(config.paymentUrl, {
+            const response = await fetch('http://localhost:5000/api/payment', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -32,7 +33,7 @@ const PaymentForm = () => {
             const data = await response.json();
             if (data.payment && data.payment.confirmation && data.payment.confirmation.confirmation_url) {
                 // После успешного платежа
-                // Вызываем функцию для добавления данных в базу данных
+            // Вызываем функцию для добавления данных в базу данных
                 handlePayment();
                 window.location.href = data.payment.confirmation.confirmation_url;
             } else {
@@ -50,16 +51,21 @@ const PaymentForm = () => {
             quantity: orderData.quantity,
             date: orderData.date
         };
-
+    
         // Отправляем данные на сервер для добавления в базу данных
-        axios.post(config.buyingUrl, paymentData)
+        axios.post('http://localhost:5000/purchaseSkipass', paymentData)
             .then(response => {
+                // Обработка успешного ответа
                 console.log(response.data);
             })
             .catch(error => {
+                // Обработка ошибки
                 console.error(error);
             });
     };
+    
+
+    
 
     return (
         <div class="payment-form">
@@ -71,9 +77,9 @@ const PaymentForm = () => {
                 </label>
                 <button type="submit">Оплатить</button>
             </form>
-            <div>
+            <div>        
 
-            </div>
+        </div>
         </div>
     );
 }
