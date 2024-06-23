@@ -12,3 +12,5 @@ Elniki web app
 `npm install`
 
 `npm start`
+
+(Разработка пока ведется в ветке preparation)
