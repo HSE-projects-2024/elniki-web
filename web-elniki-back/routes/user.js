@@ -64,7 +64,7 @@ router.post('/login', async (req, res) => {
 
             if (isValidPassword) {
                 const token = jwt.sign({ userId: user.UserID }, process.env.JWT_SECRET, { expiresIn: '7d' });
-                return res.json({ jwtToken: token });
+                return res.json({ UserID: user.UserID, jwtToken: token });
             } else {
                 return res.status(401).json({ message: 'Неверные данные' });
             }
