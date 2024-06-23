@@ -20,7 +20,6 @@ jobs:
       mysql:
         image: mysql:5.7
         env:
-          MYSQL_ROOT_PASSWORD: root
           MYSQL_DATABASE: skiresortapp
         ports:
           - 3306:3306
@@ -43,9 +42,8 @@ jobs:
 
       - name: Run backend tests
         env:
-          DATABASE_HOST: 127.0.0.1
+          DATABASE_HOST: localhost
           DATABASE_USER: root
-          DATABASE_PASSWORD: root
           DATABASE_NAME: skiresortapp
         run: npm test -- --detectOpenHandles
         working-directory: web-elniki-back
