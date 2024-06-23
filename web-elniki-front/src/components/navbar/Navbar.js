@@ -4,14 +4,19 @@ import acc from "./../../img/icons/Account.png";
 import menuIcon from "./../../img/menu1.svg";
 import "./style.css";
 
+import DropDownMenu from '../DropDownMenu/DropDownMenu';
+
+
 const Navbar = () => {
   const location = useLocation();
   const [activePath, setActivePath] = useState(location.pathname);
-  const [menuOpen, setMenuOpen] = useState(false);
+
+  const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
     setActivePath(location.pathname);
-    setMenuOpen(false);
+    setOpenMenu(false);
+
   }, [location]);
 
   const getLogoClass = () => {
@@ -28,15 +33,19 @@ const Navbar = () => {
 
   return (
     <nav className="nav">
-      <div className="container">
-        <div className="nav-row">
+
+        <div className="horizontal-list">
           <NavLink to="/" className="logo">
             <span className="bold-text">BE<span className={getLogoClass()}>SKI</span>D TIME</span><br />ЕЛЬНИКИ
           </NavLink>
-          <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)}>
+          <button className="menu-button" onClick={() => setOpenMenu(!openMenu)}>
             <img src={menuIcon} alt="Menu" className="menu-icon" />
           </button>
-          <ul className={`nav-list ${menuOpen ? 'nav-list--open' : ''}`}>
+          
+          {openMenu && <DropDownMenu setOpenMenu={setOpenMenu}/>}
+          <div className='menu-list'>
+          <ul className= "nav-list">
+
             <li className="nav-list__item">
               <NavLink to="/" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"} end>
                 Домашняя страница
@@ -59,18 +68,20 @@ const Navbar = () => {
             </li>
             <li className="nav-list__item">
               <NavLink to="/order" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"}>
-              Заказ ски-пасса
+
+                Заказ ски-пасса
               </NavLink>
             </li>
             <Link to="./login" className="account-icon">
-                        <img src={acc} alt="example"/>
-            </Link>
+            <img src={acc} />
+          </Link>
           </ul>
+
+          </div>
         </div>
-      </div>
+
     </nav>
   );
 };
-
 export default Navbar;
 

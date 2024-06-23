@@ -2,51 +2,66 @@
 .footer {
     margin-top: auto;
     padding: 60px 20px 50px;
-    background-color: #F89434; /* Укажите нужный цвет фона */
-    color: #fff; /* Укажите нужный цвет текста */
+
+    background-color: var(--accent);
+    color: var(--white); 
+
     font-weight: 600;
     line-height: 24px;
     width: 100vw;
 }
 
-.footer__wrapper {
-    display: flex;
-    justify-content: space-between; /* Разделение элементов по краям */
-    align-items: center;
-    flex-wrap: wrap; /* Добавляем возможность переносить элементы на новую строку */
-}
-
-.footer__column {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    row-gap: 5px;
-}
 
 .social__item img {
-    width: 40px; /* Укажите нужный размер иконки */
+    width: 40px; 
     height: 40px;
 }
 
 .social__item img:hover {
-    filter: invert(1); /* Пример фильтра для изменения цвета при наведении */
+    filter: invert(1); 
 }
 
-.copyright {
-    font-size: 20px;
-    text-align: center;
-    margin-top: 20px;
-    width: 100%;
+/* Large devices (desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .footer {
+        padding: 60px 20px 50px;
+    }
 }
 
-.address,
-.contact {
-    font-size: 16px;
+/* Medium devices (tablets, 768px to 1199px) */
+@media (max-width: 1199px) {
+    .footer {
+        padding: 50px 15px 40px;
+    }
+    .social__item img {
+        width: 35px;
+        height: 35px;
+    }
 }
 
-.contact p {
-    margin: 0;
+/* Small devices (landscape phones, 576px to 767px) */
+@media (max-width: 767px) {
+    .footer {
+        padding: 40px 10px 30px;
+    }
+    .social__item img {
+        width: 30px;
+        height: 30px;
+    }
 }
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {
+    .footer {
+        padding: 30px 5px 20px;
+    }
+    .social__item img {
+        width: 25px;
+        height: 25px;
+    }
+
+}
+
 
 /* Media Queries for Responsive Design */
 
