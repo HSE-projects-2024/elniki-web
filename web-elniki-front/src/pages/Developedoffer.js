@@ -10,18 +10,13 @@ import Developedoffer7 from './../img/developOffer/podroz.png';
 const Developedoffer = () => {
     return (
         <div className="developedoffer-container">
-            <div className="background-block Orange-block1"></div>
-            <div className="background-block Orange-block2"></div>
-            <div className="background-block Orange-block3"></div>
-            <div className="background-block Orange-block4"></div>
-            <div className="background-block Orange-block5"></div>
             <div className="background-block BR-block"></div>
             <div className="last-container-developedoffer">
                 <ul className="vertical-list width " style = {{gap:'80px'}}>
                     <h1 className="title-1 left-align" >Услуги</h1>
                     <ul className='horizontal-list'>
                         <img src={Developedoffer2} className="Large-img" />
-                        <p className="title-2" style={{ color: 'var(--white)' }}><strong>SKIPASS</strong></p> 
+                        <p className="title-2" style={{ color: 'var(--orange600)' }}><strong>SKIPASS</strong></p> 
                     </ul>
                     <li className="content-list__item">
                         <p className="left-align">
@@ -33,7 +28,7 @@ const Developedoffer = () => {
                     <a href="./skipass" className="button view-button">Смотреть</a>
                     
                     <ul className='horizontal-list'>
-                        <p className="title-2" style={{ color: 'var(--white)' }}><strong>Трассы</strong></p>
+                        <p className="title-2" style={{ color: 'var(--pink600)' }}><strong>Трассы</strong></p>
                         <img src={Developedoffer3} className="Large-img" />
                     </ul>
                     <li className="content-list__item">
@@ -45,7 +40,7 @@ const Developedoffer = () => {
                     
                     <ul className='horizontal-list'>
                         <img src={Developedoffer4} className="Large-img" />
-                        <p className="title-2" style={{ color: 'var(--black)' }}><strong>Горные тропы</strong></p>
+                        <p className="title-2" style={{ color: 'var(--blue400)' }}><strong>Горные тропы</strong></p>
                     </ul>
                     <li className="content-list__item">
                         <p className="left-align">
@@ -55,7 +50,7 @@ const Developedoffer = () => {
                     <a href="./SkiSlopes" className="button view-button">Смотреть</a>
                     
                     <ul className='horizontal-list'>
-                        <p className="title-2" style={{ color: 'var(--white)' }}><strong>Прокат</strong></p>
+                        <p className="title-2" style={{ color: 'var(--blue600)' }}><strong>Прокат</strong></p>
                         <img src={Developedoffer5} className="Large-img" />
                     </ul>
                     <li className="content-list__item">
@@ -67,7 +62,7 @@ const Developedoffer = () => {
                     
                     <ul className='horizontal-list'>
                         <img src={Developedoffer6} className="Large-img" />
-                        <p className="title-2" style={{ color: 'var(--white)' }}><strong>Еда</strong></p>
+                        <p className="title-2" style={{ color: 'var(--Green400)' }}><strong>Еда</strong></p>
                     </ul>
                     <li className="content-list__item">
                         <p className="left-align">

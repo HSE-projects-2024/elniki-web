@@ -5,7 +5,7 @@ const authenticateToken = require('../middleware/authMiddleware');
 
 router.get('/api/skiPasses', authenticateToken, (req, res) => {
     const userId = req.query.userId;
-    connection.query('SELECT SkiPassID, PurchaseDate, StartDate, EndDate, number_of_skipasses FROM purchasedskipasses WHERE UserID = ?', [userId], (error, skipPassResults) => {
+    connection.query('SELECT SkiPassID, PurchaseDate, StartDate, EndDate, number_of_skipasses FROM purchasedskipasses WHERE UserID = 8', (error, skipPassResults) => {
         if (error) {
             console.error('Ошибка при получении скипассов:', error);
             res.status(500).json({ error: 'Ошибка сервера' });

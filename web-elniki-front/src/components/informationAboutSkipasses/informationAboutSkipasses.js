@@ -18,7 +18,7 @@ const SkiPassPage = ({ userId }) => {
 
   
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/skiPasses?userId=${userId}`)
+        axios.get(`http://localhost:3001/api/skiPasses?userId=${userId}`)
           .then(response => {
             setSkiPasses(response.data);
           })

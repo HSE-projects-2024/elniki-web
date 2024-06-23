@@ -20,7 +20,7 @@ router.post('/api/payment', async (req, res) => {
             },
             confirmation: {
                 type: 'redirect',
-                return_url: 'http://localhost:3001/api/skiPasses',
+                return_url: 'http://localhost:3000/myskipass',
             },
             description: 'Payment on the site',
         });

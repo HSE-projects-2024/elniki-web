@@ -1,19 +1,21 @@
-.rental-page {
+.food-container {
+    position: relative;
+    width: 100%;
+    height: 350vh; 
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    font-family: Arial, sans-serif;
-    text-align: center;
+    overflow: hidden;
+    background-color: var(--white);
 }
 
-.rental-page h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
+.last-container-food {
+    position: absolute;
+    z-index: 3;
+    top: 1%;
 }
 
-.rental-page p {
-    font-size: 18px;
-    color: #666;
+.width{
+    max-width: 1050px;
+    min-width: 950px;
 }

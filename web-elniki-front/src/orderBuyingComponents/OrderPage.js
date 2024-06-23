@@ -7,11 +7,11 @@ export const OrderPage = () => {
     const [date, setDate] = useState(null);
     const [skipAssTypes, setSkipAssTypes] = useState([]);
     const [selectedType, setSelectedType] = useState('');
-    const [quantity, setQuantity] = useState(1);
-    const [price, setPrice] = useState(0);
+    const [quantity, setQuantity] = useState(1); // Добавляем состояние для хранения количества
+    const [price, setPrice] = useState(0); // Добавляем состояние для хранения цены
 
     useEffect(() => {
-        fetch('http://localhost:5000/getSkipassTypes')
+        fetch('http://localhost:3001/getSkipassTypes')
             .then(response => response.json())
             .then(data => setSkipAssTypes(data))
             .catch(error => console.error('Error fetching skipass types: ', error));
@@ -26,15 +26,35 @@ export const OrderPage = () => {
         setSelectedType(selectedTypeId);
     };
 
-    const handleOrderClick = () => {
+    const handleOrderClick = async () => {
+        try {
+        // Передача данных на страницу /buy
         const orderData = {
             selectedType,
             quantity,
             date
         };
+        // encodeURIComponent используется для корректной передачи параметров URL
         const queryParams = new URLSearchParams(orderData).toString();
+         // Проверка страницы /buy
+         const buyResponse = await fetch(`/buy?${queryParams}`);
+         if (!buyResponse.ok) {
+             throw new Error('Ошибка: Страница /buy не найдена или не может быть загружена');
+         }
+ 
+         // Проверка страницы /payment
+         const paymentResponse = await fetch(`/payment?${queryParams}`);
+         if (!paymentResponse.ok) {
+             throw new Error('Ошибка: Страница /payment не найдена или не может быть загружена');
+         }
         window.location.href = `/buy?${queryParams}`;
+        window.location.href = `/payment?${queryParams}`;
         localStorage.setItem('orderData', JSON.stringify(orderData));
+
+        window.location.href = '/payment';
+    } catch (error) {
+        console.error('Произошла ошибка при обработке заказа:', error);
+        }
     };
 
     return (
