@@ -29,13 +29,13 @@ const LogPage = () => {
     };
 
     const handleSubmit = async (e) => {
-        localStorage.clear();
-        sessionStorage.clear();
         e.preventDefault();
         try {
             const response = await axios.post(config.loginUrl, user);
             console.log(response.data);
             if (response.data.jwtToken) {
+                localStorage.clear();
+                sessionStorage.clear();
                 if (rememberMe) {
                     localStorage.setItem('jwtToken', response.data.jwtToken);
                 } else {
