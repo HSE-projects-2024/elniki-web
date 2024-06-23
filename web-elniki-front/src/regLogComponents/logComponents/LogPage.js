@@ -7,30 +7,42 @@ import axios from 'axios';
 import config from '../../config';
 
 const LogPage = () => {
+
     const navigate = useNavigate();
+
     const [user, setUser] = useState({ Email: '', Password: '' });
     const [rememberMe, setRememberMe] = useState(false);
     const [formErrors, setFormErrors] = useState({ Email: false, Password: false, message: '' });
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setUser({ ...user, [name]: value });
+      
+        setUser(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+        setFormErrors(prevState => ({
+            ...prevState,
+            [name]: false,
+            message: ''
+        }));
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const response = await axios.post(config.loginUrl, user);
-            if (response.data.token) {
+            console.log(response.data);
+            if (response.data.jwtToken) {
                 if (rememberMe) {
                     localStorage.setItem('userData', JSON.stringify({
-                        userId: response.data.userId,
-                        token: response.data.token
+                        UserID: response.data.UserID,
+                        jwtToken: response.data.jwtToken
                     }));
                 } else {
                     sessionStorage.setItem('userData', JSON.stringify({
-                        userId: response.data.userId,
-                        token: response.data.token
+                        UserID: response.data.UserID,
+                        jwtToken: response.data.jwtToken
                     }));
                 }
                 navigate('/');
@@ -76,6 +88,11 @@ const LogPage = () => {
                                 required
                             />
                         </Form.Group>
+                        {formErrors.message && (
+                            <div className="invalid-feedback d-block">
+                                {formErrors.message}
+                            </div>
+                        )}
                         <p className='checkbox'>
                             <Form.Check
                                 label="Запомнить меня"
@@ -87,7 +104,6 @@ const LogPage = () => {
                     </Form>
                 </div>
                 <p className='text-center'>Еще нет аккаунта? <Link to="/reg">Зарегистрироваться</Link></p>
-                {formErrors.message && <p className="error-message">{formErrors.message}</p>}
             </div>
         </div>
     );

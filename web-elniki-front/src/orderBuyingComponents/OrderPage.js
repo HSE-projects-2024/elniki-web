@@ -39,8 +39,8 @@ export const OrderPage = () => {
         };
         // encodeURIComponent используется для корректной передачи параметров URL
         const queryParams = new URLSearchParams(orderData).toString();
-        window.location.href = `/buy?${queryParams}`;
-        window.location.href = `/payment?${queryParams}`;
+        window.location.href = /buy?${queryParams};
+        window.location.href = /payment?${queryParams};
         localStorage.setItem('orderData', JSON.stringify(orderData));
     
     window.location.href = '/payment';

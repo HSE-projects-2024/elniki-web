@@ -59,7 +59,7 @@ const CreditCardForm = () => {
             <input
               type="text" // Change type to text for number and name inputs
               name="number"
-              className={`form-control ${state.error.number ? "error" : ""}`}
+              className={form-control ${state.error.number ? "error" : ""}}
               placeholder="Номер карты"
               value={state.number}
               onChange={handleInputChange}
@@ -73,7 +73,7 @@ const CreditCardForm = () => {
             <input
               type="text" // Change type to text for number and name inputs
               name="name"
-              className={`form-control ${state.error.name ? "error" : ""}`}
+              className={form-control ${state.error.name ? "error" : ""}}
               placeholder="Имя"
               value={state.name}
               onChange={handleInputChange}
@@ -87,7 +87,7 @@ const CreditCardForm = () => {
               <input
                 type="text" // Change type to text for expiry and cvc inputs
                 name="expiry"
-                className={`form-control ${state.error.expiry ? "error" : ""}`}
+                className={form-control ${state.error.expiry ? "error" : ""}}
                 placeholder="Годен до"
                 value={state.expiry}
                 onChange={handleInputChange}
@@ -100,7 +100,7 @@ const CreditCardForm = () => {
               <input
                 type="text" // Change type to text for expiry and cvc inputs
                 name="cvc"
-                className={`form-control ${state.error.cvc ? "error" : ""}`}
+                className={form-control ${state.error.cvc ? "error" : ""}}
                 placeholder="CVC"
                 value={state.cvc}
                 onChange={handleInputChange}
