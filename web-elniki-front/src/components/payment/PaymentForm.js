@@ -2,14 +2,16 @@ import React, { useState, useEffect } from 'react';
 import './PaymentForm.css';
 import axios from 'axios'; 
 
-const PaymentForm = () => {
+
+const PaymentForm = ({ userId }) => {
+    console.log(userId);
     const [amount, setAmount] = useState('');
     const storedData = localStorage.getItem('orderData');
     const orderData = storedData ? JSON.parse(storedData) : {};
     const [skiPassPrice, setSkiPassPrice] = useState(0);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/getSkipassPrice?SkiPassTypeId=${orderData.selectedType}&quantity=${orderData.quantity}`)
+        axios.get(`http://localhost:3001/getSkipassPrice?SkiPassTypeId=${orderData.selectedType}&quantity=${orderData.quantity}&userId=${userId}`)
           .then(response => {
             setSkiPassPrice(response.data.price);
           })
@@ -23,7 +25,7 @@ const PaymentForm = () => {
     const handlePaymentSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:5000/api/payment', {
+            const response = await fetch('http://localhost:3001/api/payment', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -53,7 +55,7 @@ const PaymentForm = () => {
         };
     
         // Отправляем данные на сервер для добавления в базу данных
-        axios.post('http://localhost:5000/purchaseSkipass', paymentData)
+        axios.post('http://localhost:3001/purchaseSkipass', paymentData)
             .then(response => {
                 // Обработка успешного ответа
                 console.log(response.data);

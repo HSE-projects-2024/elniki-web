@@ -2,13 +2,15 @@ const express = require('express');
 const router = express.Router();
 const connection = require('../db');
 
+
+
 router.post('/purchaseSkipass', (req, res) => {
-    const { selectedType, quantity, date } = req.body;
+    const { userId, selectedType, quantity, date } = req.body;
     const purchaseDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
     const startDate = new Date(date).toISOString().slice(0, 19).replace('T', ' ');
 
     const sql = `INSERT INTO purchasedskipasses (UserID, SkiPassID, PurchaseDate, StartDate, EndDate, number_of_skipasses) 
-    VALUES (1, ${parseInt(selectedType)}, '${purchaseDate}', '${startDate}', '2024-02-12 00:00:00', ${parseInt(quantity)})`;
+    VALUES (${parseInt(userId)}, ${parseInt(selectedType)}, '${purchaseDate}', '${startDate}', '2024-02-12 00:00:00', ${parseInt(quantity)})`;
 
     connection.query(sql, (error, result) => {
         if (error) {
