@@ -11,16 +11,6 @@
 	box-sizing: border-box;
 }
 
-:focus,
-:active {
-	/*outline: none;*/
-}
-
-a:focus,
-a:active {
-	/* outline: none;*/
-}
-
 /* Links */
 
 a, a:link, a:visited  {
@@ -58,10 +48,6 @@ img, svg {
 	height: auto;
 }
 
-address {
-  font-style: normal;
-}
-
 /* Form */
 
 input, textarea, button, select {
@@ -81,16 +67,6 @@ button, input[type="submit"] {
     background-color: transparent;
     background: none;
     cursor: pointer;
-}
-
-input:focus, input:active,
-button:focus, button:active {
-    outline: none;
-}
-
-button::-moz-focus-inner {
-	padding: 0;
-	border: 0;
 }
 
 label {

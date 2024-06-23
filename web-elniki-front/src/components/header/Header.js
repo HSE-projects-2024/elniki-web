@@ -6,13 +6,14 @@ const Header = () => {
 			<div className="header__wrapper">
 				<h1 className="header__title">
 					<strong>
-						Добро пожаловать в  <em>Ельники</em>
+						Добро пожаловать в Ельники
 					</strong>
 				</h1>
 				<div className="header__text">
 					<p>Лучшие истории начинаются здесь</p>
 				</div>
-				<a href="./services" className="services">
+				<a href="./services" className="button header-button">
+
 					Услуги
 				</a>
 			</div>

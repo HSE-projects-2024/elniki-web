@@ -1,0 +1,85 @@
+.lift-services {
+    background-color: var(--white);
+    padding: 20px;
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.image-container {
+    position: relative;
+    text-align: center;
+
+}
+
+.service-image {
+    width: 100%;
+    border-radius: 10px 10px 10px 0;
+}
+
+.service-title {
+    position: absolute;
+    top: 85%;
+    right: 40%;
+    background-color: var(--orange600);
+    color: var(--white);
+    padding: 5px 10px;
+
+    border-radius: 0 30px 30px 10px;
+    font-size: var(--xlarge);
+}
+
+.service-details {
+    padding: 10px 0;
+    text-align: left;
+}
+
+.service-details p {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-size: var(--large);
+}
+
+.service-details i {
+    margin-right: 10px;
+    font-size: var(--small);
+}
+
+.order-button {
+    background-color: var(--blue600); /* Цвет кнопки */
+    color: var(--white);
+    width: 50%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.order-button:hover {
+    background-color: var(--orange600);
+}
+
+.how-it-works {
+    background-color: var(--blue300);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.how-it-works h2 {
+    margin-top: 0;
+}
+
+.how-it-works p {
+    margin: 10px 0;
+    font-size: var(--medium);
+    line-height: 1.5;
+}
+.view-button-green-skipass {
+    position:static;
+    background-color: var(--Green400); /* Цвет кнопки */
+    color: var(--white);
+}
+.view-button-green-skipass:hover {
+    background-color: var(--orange600);
+}

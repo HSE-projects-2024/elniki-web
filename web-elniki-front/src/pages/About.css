@@ -1,0 +1,14 @@
+.skipass-container {
+    width: 100%;
+    height: auto; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    min-width: 950px;
+}
+
+.width{
+    max-width: 1050px;
+    min-width: 950px;
+}

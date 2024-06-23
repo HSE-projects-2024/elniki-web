@@ -1,0 +1,59 @@
+.resort-container {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Высота блока, можно изменить */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--white); /* Белый фон для контейнера */
+}
+
+.blue-block {
+    top: 0;
+    left: 0;
+    width: 45%;
+    height: 70%;
+    background-color: var(--blue600); /* Темно-синий цвет */
+}
+.blue-block2 {
+    top: 90.99%;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    background-color: var(--blue600); /* Темно-синий цвет */
+}
+.white-block {
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 90%;
+    background-color: var(--white); /* Белый цвет */
+}
+
+.red-block {
+    top: 35%;
+    right: 0;
+    width: 40%;
+    height: 60%;
+    background-color: var(--pink600); /* Красный цвет */
+}
+
+.image-container {
+    position: relative;
+    z-index: 2;
+}
+
+.resort-button {
+    position: absolute;
+    bottom: 5%;
+    background-color: var(--blue300); /* Цвет кнопки */
+    color: var(--black);
+    border-radius: var(--medium);
+    font-size: var(--xlarge);
+}
+
+.resort-button:hover {
+    background-color: var(--pink600);
+    color: var(--white); 
+}
