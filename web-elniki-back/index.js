@@ -21,23 +21,6 @@ app.use('/', userSkipasses);
 app.use('/', payment);
 app.use('/', price);
 
-// Маршрут для получения данных скипассов
-app.get('/getSkipasses', (req, res) => {
-    const query = `
-        SELECT s.SkiPassID, s.ValidityPeriod, s.Price, s.Description, st.skiPassType, s.ChildPrice
-        FROM skipasses s
-        JOIN skipasstypes st ON s.SkiPassTypeId = st.id;
-    `;
-    conn.query(query, (err, results) => {
-        if (err) {
-            console.error('Ошибка выполнения запроса:', err);
-            res.status(500).send('Ошибка сервера');
-            return;
-        }
-        res.json(results);
-    });
-});
-
 const PORT = process.env.PORT || 3001;
 const server = app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
