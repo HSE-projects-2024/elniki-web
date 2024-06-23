@@ -4,6 +4,7 @@ import skiPassImage from '../../img/skipass.png';
 import './information.css';
 
 const SkiPassPage = ({ userId }) => {
+
   const [skiPasses, setSkiPasses] = useState([]);
 
   const formatDate = (timestamp) => {

@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const connection = require('../db');
+const authenticateToken = require('../middleware/authMiddleware');
 
-router.get('/api/skiPasses', (req, res) => {
+router.get('/api/skiPasses', authenticateToken, (req, res) => {
     const { userId } = req.query;
     connection.query('SELECT SkiPassID, PurchaseDate, StartDate, EndDate, number_of_skipasses FROM purchasedskipasses WHERE UserID = ?', [userId], (error, skipPassResults) => {
         if (error) {
