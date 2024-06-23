@@ -4,7 +4,7 @@ const connection = require('../db');
 const authenticateToken = require('../middleware/authMiddleware');
 
 router.get('/api/skiPasses', authenticateToken, (req, res) => {
-    const { userId } = req.query;
+    const userId = req.query.userId;
     connection.query('SELECT SkiPassID, PurchaseDate, StartDate, EndDate, number_of_skipasses FROM purchasedskipasses WHERE UserID = ?', [userId], (error, skipPassResults) => {
         if (error) {
             console.error('Ошибка при получении скипассов:', error);
