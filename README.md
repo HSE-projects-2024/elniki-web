@@ -1,8 +1,4 @@
-# elniki-web-front
-Front part of the Elniki web app
+# elniki-web
+Elniki web app
 
-### Чтобы запустить проект, в терминале прописываем следующие команды:
-
-`cd web-elniki-front` (переходим в папку с проектом)
-
-`npm start`
+Ветка для работы с фронт частью для операций регистрации/авторизации
