@@ -11,18 +11,19 @@ const Rental = () => {
         <div className="food-container">
             <div className="last-container-food">
                 <ul className="vertical-list width " style = {{gap:'80px'}}>
-                    <h1 className="title-1 left-align" >Еда</h1>
-                    <ul className='horizontal-list'>
-                        <img src={Food1} className="Large-img" />
-                        <p className="title-2" style={{ color: 'var(--pink600)' }}><strong>Бургер Классика</strong></p> 
-                    </ul>
-                    <li className="content-list__item">
-                        <p className="left-align">
-                        Котлета мраморная говядина, сыр чеддер, булочка бриошь, салат айсберг, томаты, огурцы ким-чи, красный лук, пряный майонез, домашний кетчуп.</p>
-                    </li>
+                    <img src={Food1} className="Large-img" />
+                    <h1 className="title-1 left-align" >Прокат оборудования</h1>
+                    <p className="title-2 left-align">
+                    Открыто: 7:30–21:30</p>
                   
                     <ul className='horizontal-list'>
-                        <p className="title-2" style={{ color: 'var(--pink600)' }}><strong>Бургер Шашлык</strong></p>
+
+                        <ui className='vertical-list'>
+                        <p className="title-2" style={{ color: 'var(--pink600)' }}><strong>Новинка!</strong></p>
+                        <p className="title-2" style={{ color: 'var(--pink600)' }}><strong>Сноутюбинг</strong></p>
+                        <p className="left-align">
+                        Не хотите кататься на лыжах? Не беда! Наслаждайтесь катанием на сноутюбинге по снегу!</p>
+                        </ui>
                         <img src={Food2} className="Large-img" />
                     </ul>
                     <li className="content-list__item">

@@ -65,17 +65,29 @@ const Navbar = () => {
                             </NavLink>
                         </li>
                         <li className="nav-list__item">
-                            <NavLink to="/order" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"}>
-                                Заказ ски-пасса
+                            <NavLink to="/food" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"}>
+                                Еда
                             </NavLink>
                         </li>
+
+
                         {jwtToken && (
-                            <li className="nav-list__item">
-                                <NavLink to="/myskipass" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"}>
-                                    Мои скипассы
-                                </NavLink>
-                            </li>
+                            <>
+                                <li className="nav-list__item">
+                                    <NavLink to="/myskipass" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"}>
+                                        Мои скипассы
+                                    </NavLink>
+                                </li>
+                                <li className="nav-list__item">
+                                    <NavLink to="/order" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"}>
+                                        Заказ ски-пасса
+                                    </NavLink>
+                                </li>
+
+                            </>
                         )}
+
+
                     </ul>
                 </div>
             </div>

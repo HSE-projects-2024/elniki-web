@@ -60,6 +60,11 @@ const DropDownMenu = ({ setOpenMenu }) => {
                             </NavLink>
                         </li>
                         <li className="nav-list__item">
+                            <NavLink to="/order" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"}>
+                                Заказ ски-пасса
+                            </NavLink>
+                        </li>
+                        <li className="nav-list__item">
                             <NavLink to="#" className="nav-list__link" onClick={handleLogoutAndRedirectHome}>
                                 Сменить пользователя
                             </NavLink>
