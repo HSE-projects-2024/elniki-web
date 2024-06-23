@@ -9,10 +9,8 @@ import About3 from './../img/about/kobieta.png';
 const About = () => {
     return (
         <div className="skipass-container">
-            <div className="background-block ski-block1"></div>
-            <div className="background-block ski-block2"></div>
-            <div className="background-block ski-block3"></div>
-            <div className="last-container-ski">
+
+            <div className="vertical-list" style={{padding:'40px'}}>
                 <ul className="vertical-list width " style={{ gap: '80px' }}>
                     <h1 className="title-1 left-align" >О нас</h1>
                     <img src={About1} className="Large-img" />
