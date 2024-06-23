@@ -1,11 +1,10 @@
 const mysql = require('mysql2');
-require('dotenv').config();
 
 // Подключение к БД
 var conn = mysql.createConnection({
-    host: process.env.MYSQL_HOST,
-    user: process.env.MYSQL_USER,
-    database: process.env.MYSQL_DATABASE
+    host: 'localhost',
+    user: 'root',
+    database: 'skiresortapp'
 });
 
 conn.connect((err) => {
