@@ -1,0 +1,21 @@
+
+.content-list__image {
+    margin-right: 20px; /* Отступ справа от большой картинки */
+    flex: 0 0 auto; 
+}
+
+.content-list__image img {
+    width: 600px; /* Ширина большой картинки */
+
+    height: auto; 
+}
+.foreground-image2,
+.foreground-image3 {
+    width: 100px; 
+
+    height: auto;
+    margin-right: 10px; /* Расстояние между иконкой и текстом */
+}
+
+
+

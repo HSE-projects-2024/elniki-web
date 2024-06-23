@@ -1,0 +1,240 @@
+@import './reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Raleway:wght@400;500;600&display=swap');
+
+:root {
+	/* Colors */
+	--black: #171718;
+	--white: #fff;
+	--orange600: #F89434;
+	--blue600 : #032C4A;
+	--blue400 : #3591A5;
+	--blue300 : #C7F5FF;
+	--pink600 : #DC725D;
+	--Green400 : #63804D;
+    --Brownish600 : #272022;
+
+    
+    /* Font size */
+    --small: 16px;
+	--medium: 20px;
+	--large: 24px;
+	--xlarge : 28px;
+	--xxlarge : 32px;
+
+
+	--page-bg: var(--white);
+	--text-color: var(--black);
+	--accent: var(--orange600);
+	--title-1: var(--black);
+	--title-2: var(--black);
+}
+
+html,
+body {
+	display: flex;
+	flex-direction: column;
+
+	font-family: 'Raleway';
+	font-style: normal;
+	letter-spacing: -0.5px;
+
+	background-color: var(--page-bg);
+	color: var(--text-color);
+}
+
+/* General */
+
+.container {
+	margin: 0 auto;
+	padding: 0 15px;
+	max-width: 1200px;
+}
+
+.none {
+	display: none !important;
+}
+
+.section {
+	padding: 50px 0;
+}
+
+.title-1 {
+	margin-bottom: 60px;
+	font-size: 74px;
+	font-weight: 300;
+	color: var(--title-1);
+
+	line-height: var(--xxlarge);
+
+	text-align: center;
+	font-family: 'Alice';
+	font-style: normal;
+}
+
+.title-2 {
+
+	margin-bottom: var(--medium);
+	font-size: var(--medium);
+	font-weight: 600;
+	color: var(--title-2);
+	line-height: var(--medium);
+    line-height: 1.2;
+	text-align: center;
+
+	font-style: normal;
+}
+.bold-text {
+    font-weight: 700; /* Жирный текст */
+
+	font-size: var(--xxlarge);
+}
+.left-align {
+    text-align: left;
+}
+.colored-text {
+    color: var(--blue400);
+}
+
+.content-list__item {
+	font-size: var(--large);
+
+	line-height: 1.5;
+}
+
+.horizontal-list {
+    display: flex;
+    flex-direction: row; /* Размещает элементы по горизонтали */
+    justify-content: center; /* Центрирует элементы по горизонтали */
+    align-items: center; /* Центрирует элементы по вертикали */
+
+    gap: var(--medium); /* Расстояние между элементами */
+
+    text-align: center; /* Центрирует текст внутри элементов */
+}
+
+.vertical-list {
+    display: flex;
+    flex-direction: column; /* Размещает элементы по вертикали */
+    align-items: center; /* Центрирует элементы по горизонтали */
+
+    text-align: center; /* Центрирует текст внутри элементов */
+}
+
+.background-block {
+    position: absolute;
+    z-index: 1;
+}
+
+/* Button styles */
+.button {
+    display: absolute;
+    padding: var(--small) var(--large);
+    border: none;   
+    border-radius: var(--medium); 
+    font-size: var(--xxlarge);
+
+    z-index: 3;
+    cursor: pointer;
+}
+
+
+.Large-img{
+    width: 600px; /* Ширина большой картинки */
+    height: auto; 
+}
+
+/* Стиль для маленького текста */
+.font-size-small {
+    font-size: var(--small);
+  }
+  
+  /* Стиль для нормального текста */
+  .font-size-medium {
+    font-size: var(--medium);
+  }
+  
+  /* Стиль для большого текста */
+  .font-size-large {
+    font-size: var(--large);
+  }
+  
+  /* Стиль для очень большого текста */
+  .font-size-xlarge {
+    font-size: var(--xlarge);
+  }
+  
+  /* Стиль для огромного текста */
+  .font-size-xxlarge {
+    font-size: var(--xxlarge);
+  }
+
+
+
+
+/* Media Queries for Responsive Design */
+
+/* Large devices (desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .title-1 {
+        font-size: 74px;
+    }
+    .title-2 {
+        font-size: 54px;
+    }
+}
+
+/* Medium devices (tablets, 768px to 1199px) */
+@media (max-width: 1199px) {
+    .container {
+        max-width: 900px;
+    }
+    .title-1 {
+        font-size: 60px;
+    }
+    .title-2 {
+        font-size: 48px;
+    }
+    .content-list__item {
+        font-size: 22px;
+    }
+}
+
+/* Small devices (landscape phones, 576px to 767px) */
+@media (max-width: 767px) {
+    .container {
+        max-width: 540px;
+    }
+    .title-1 {
+        font-size: 50px;
+    }
+    .title-2 {
+        font-size: 40px;
+    }
+    .content-list__item {
+        font-size: 20px;
+    }
+    .horizontal-list {
+        flex-direction: column; /* Размещает элементы по вертикали */
+        gap: 10px; /* Уменьшает расстояние между элементами */
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {
+    .container {
+        max-width: 100%;
+    }
+    .title-1 {
+        font-size: 40px;
+    }
+    .title-2 {
+        font-size: 32px;
+    }
+    .content-list__item {
+        font-size: 18px;
+    }
+    .horizontal-list {
+        flex-direction: column; /* Размещает элементы по вертикали */
+        gap: 10px; /* Уменьшает расстояние между элементами */
+    }
+}
