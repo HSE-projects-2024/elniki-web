@@ -21,10 +21,6 @@ export const OrderPage = () => {
         setDate(date);
     };
 
-
-    
-
-
     const handleTypeChange = (e) => {
         const selectedTypeId = e.target.value;
         setSelectedType(selectedTypeId);
@@ -39,11 +35,11 @@ export const OrderPage = () => {
         };
         // encodeURIComponent используется для корректной передачи параметров URL
         const queryParams = new URLSearchParams(orderData).toString();
-        window.location.href = /buy?${queryParams};
-        window.location.href = /payment?${queryParams};
+        window.location.href = `/buy?${queryParams}`;
+        window.location.href = `/payment?${queryParams}`;
         localStorage.setItem('orderData', JSON.stringify(orderData));
-    
-    window.location.href = '/payment';
+
+        window.location.href = '/payment';
     };
 
     return (
@@ -53,34 +49,34 @@ export const OrderPage = () => {
                     <h1>Заказ ски-пасса</h1>
                 </div>
                 <div className='forma'>
-                
-                <div className="title">Тип ски-пасса</div>
-                <select id="typeSelect" value={selectedType} onChange={handleTypeChange} className="text-in-box">
-                    <option value="">Выберите тип ски-пасса</option>
-                    {
-                        skipAssTypes.map(skipAssType => (
-                            <option key={skipAssType.id} value={skipAssType.id}>{skipAssType.skiPassType}</option>
-                        ))
-                    }
-                </select>
 
-                <div className="title">Количество</div>
-                <input type="number" value={quantity} onChange={(e) => setQuantity(parseInt(e.target.value))} min="1" className="text-in-box" />
+                    <div className="title">Тип ски-пасса</div>
+                    <select id="typeSelect" value={selectedType} onChange={handleTypeChange} className="text-in-box">
+                        <option value="">Выберите тип ски-пасса</option>
+                        {
+                            skipAssTypes.map(skipAssType => (
+                                <option key={skipAssType.id} value={skipAssType.id}>{skipAssType.skiPassType}</option>
+                            ))
+                        }
+                    </select>
 
-                <div className="title">Выберите дату</div>
-                <div>
-                    {date && <p className='date'>Выбранная дата: {date.toLocaleDateString()}</p>}
-                    <Calendar onChange={handleDateChange} />
+                    <div className="title">Количество</div>
+                    <input type="number" value={quantity} onChange={(e) => setQuantity(parseInt(e.target.value))} min="1" className="text-in-box" />
+
+                    <div className="title">Выберите дату</div>
+                    <div>
+                        {date && <p className='date'>Выбранная дата: {date.toLocaleDateString()}</p>}
+                        <Calendar onChange={handleDateChange} />
+                    </div>
+
+                    <button className='submit' onClick={handleOrderClick}>Заказать</button>
+
+                    <div className='info'>
+                        <p>Билетная касса горнолыжного склона:</p>
+                        <p>Открыта круглый год</p>
+                        <p>Пн–Вс: 7:30–21:30</p>
+                    </div>
                 </div>
-
-                <button className='submit' onClick={handleOrderClick}>Заказать</button>
-
-                <div className='info'>
-                    <p>Билетная касса горнолыжного склона:</p>
-                    <p>Открыта круглый год</p>
-                    <p>Пн–Вс: 7:30–21:30</p>
-                </div>
-            </div>
             </div>
         </body>
     );

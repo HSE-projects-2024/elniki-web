@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './styles/main.css';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
@@ -15,8 +15,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { OrderPage } from "./orderBuyingComponents/OrderPage";
 import { BuyingPage } from "./orderBuyingComponents/BuyingPage";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { OrderPage } from "./orderBuyingComponents/OrderPage";
-import { BuyingPage } from "./orderBuyingComponents/BuyingPage";
 import PaymentForm from './components/payment/PaymentForm';
 import RegPage from "./regLogComponents/regComponents/RegPage";
 import LogPage from './regLogComponents/logComponents/LogPage';
@@ -32,18 +30,18 @@ function App() {
           <Route path='/order' element={<OrderPage />} />
           <Route path='/buy' element={<BuyingPage />} />
           <Route path="/services.html" element={<Developedoffer />} />
-          <Route path='/login' element={<LogPage />}/>
-          <Route path='/reg' element={<RegPage />}/>
+          <Route path='/login' element={<LogPage />} />
+          <Route path='/reg' element={<RegPage />} />
           <Route path="/accommodation" element={<div>Accommodation Page</div>} />
-          <Route path="/abouttheresort" element={<About/>} />
+          <Route path="/abouttheresort" element={<About />} />
           <Route path="/account" element={<div>Account Page</div>} />
-          <Route path="/contact" element={<Contact/>} />
+          <Route path="/contact" element={<Contact />} />
           <Route path='/payment' element={<PaymentForm />} />
           <Route path="/food" element={<Food />} />
           <Route path="/skipass" element={<Skipass />} />
           <Route path="/SkiSlopes" element={<SkiSlopes />} />
           <Route path="/rental" element={<Rental />} />
-          <Route path="/myskipass" element={<SkiPassPage userId={1}/>} />
+          <Route path="/myskipass" element={<SkiPassPage userId={1} />} />
         </Routes>
         <Footer />
       </Router>
