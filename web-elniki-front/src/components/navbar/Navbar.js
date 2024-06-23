@@ -3,16 +3,20 @@ import { NavLink, useLocation, Link } from 'react-router-dom';
 import acc from "./../../img/icons/Account.png";
 import menuIcon from "./../../img/menu1.svg";
 import "./style.css";
+
 import DropDownMenu from '../DropDownMenu/DropDownMenu';
+
 
 const Navbar = () => {
   const location = useLocation();
   const [activePath, setActivePath] = useState(location.pathname);
+
   const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
     setActivePath(location.pathname);
     setOpenMenu(false);
+
   }, [location]);
 
   const getLogoClass = () => {
@@ -29,6 +33,7 @@ const Navbar = () => {
 
   return (
     <nav className="nav">
+
         <div className="horizontal-list">
           <NavLink to="/" className="logo">
             <span className="bold-text">BE<span className={getLogoClass()}>SKI</span>D TIME</span><br />ЕЛЬНИКИ
@@ -40,6 +45,7 @@ const Navbar = () => {
           {openMenu && <DropDownMenu setOpenMenu={setOpenMenu}/>}
           <div className='menu-list'>
           <ul className= "nav-list">
+
             <li className="nav-list__item">
               <NavLink to="/" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"} end>
                 Домашняя страница
@@ -62,6 +68,7 @@ const Navbar = () => {
             </li>
             <li className="nav-list__item">
               <NavLink to="/order" className={({ isActive }) => isActive ? "nav-list__link nav-list__link--active" : "nav-list__link"}>
+
                 Заказ ски-пасса
               </NavLink>
             </li>
@@ -72,10 +79,9 @@ const Navbar = () => {
 
           </div>
         </div>
+
     </nav>
   );
 };
-
 export default Navbar;
-
 

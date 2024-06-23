@@ -12,6 +12,7 @@
 	--pink600 : #DC725D;
 	--Green400 : #63804D;
     --Brownish600 : #272022;
+
     
     /* Font size */
     --small: 16px;
@@ -19,6 +20,7 @@
 	--large: 24px;
 	--xlarge : 28px;
 	--xxlarge : 32px;
+
 
 	--page-bg: var(--white);
 	--text-color: var(--black);
@@ -31,9 +33,11 @@ html,
 body {
 	display: flex;
 	flex-direction: column;
+
 	font-family: 'Raleway';
 	font-style: normal;
 	letter-spacing: -0.5px;
+
 	background-color: var(--page-bg);
 	color: var(--text-color);
 }
@@ -59,13 +63,16 @@ body {
 	font-size: 74px;
 	font-weight: 300;
 	color: var(--title-1);
+
 	line-height: var(--xxlarge);
+
 	text-align: center;
 	font-family: 'Alice';
 	font-style: normal;
 }
 
 .title-2 {
+
 	margin-bottom: var(--medium);
 	font-size: var(--medium);
 	font-weight: 600;
@@ -73,10 +80,12 @@ body {
 	line-height: var(--medium);
     line-height: 1.2;
 	text-align: center;
+
 	font-style: normal;
 }
 .bold-text {
     font-weight: 700; /* Жирный текст */
+
 	font-size: var(--xxlarge);
 }
 .left-align {
@@ -88,6 +97,7 @@ body {
 
 .content-list__item {
 	font-size: var(--large);
+
 	line-height: 1.5;
 }
 
@@ -96,7 +106,9 @@ body {
     flex-direction: row; /* Размещает элементы по горизонтали */
     justify-content: center; /* Центрирует элементы по горизонтали */
     align-items: center; /* Центрирует элементы по вертикали */
+
     gap: var(--medium); /* Расстояние между элементами */
+
     text-align: center; /* Центрирует текст внутри элементов */
 }
 
@@ -104,6 +116,7 @@ body {
     display: flex;
     flex-direction: column; /* Размещает элементы по вертикали */
     align-items: center; /* Центрирует элементы по горизонтали */
+
     text-align: center; /* Центрирует текст внутри элементов */
 }
 
@@ -119,9 +132,11 @@ body {
     border: none;   
     border-radius: var(--medium); 
     font-size: var(--xxlarge);
+
     z-index: 3;
     cursor: pointer;
 }
+
 
 .Large-img{
     width: 600px; /* Ширина большой картинки */
@@ -152,6 +167,7 @@ body {
   .font-size-xxlarge {
     font-size: var(--xxlarge);
   }
+
 
 
 

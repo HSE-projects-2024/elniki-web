@@ -1,6 +1,8 @@
 import React from 'react';
+
 import './SkiResort.css';
 import skier from './../img/skierw.svg'; 
+
 
 const SkiResort = () => {
     return (
@@ -12,6 +14,7 @@ const SkiResort = () => {
                 <img src={skier} alt="Skier" className="Large-img" />
             </div>
             <a href="/abouttheresort" className="button resort-button">О курорте</a>
+
             <div className="background-block blue-block2"></div>
         </div>
         

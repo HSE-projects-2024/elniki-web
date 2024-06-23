@@ -5,13 +5,17 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
 	background-color: var(--white); 
+
 	background-image: url('./../../img/header.jpg');
 	background-repeat: no-repeat;
 	background-size: cover; 
 	background-position: center center;
+
 	border-bottom: 1px solid var(--accent);
 	color: var(--white); 
+
 	text-align: center;
 	overflow: hidden;
 	width: 100vw;
@@ -44,6 +48,7 @@
 .header__text p + p {
 	margin-top: 0.5em;
 }
+
 .header-button {
     background-color: var(--blue400); /* Цвет кнопки */
     color: var(--white);
@@ -52,3 +57,4 @@
 .header-button:hover {
     background-color: var(--orange600);
 }
+

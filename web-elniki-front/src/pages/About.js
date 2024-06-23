@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './About.css';
 import About1 from './../img/skierw.svg';
 import About2 from './../img/about/wear.png';
@@ -46,4 +47,5 @@ const About = () => {
     </div>
 );
 }
+
 export default About;

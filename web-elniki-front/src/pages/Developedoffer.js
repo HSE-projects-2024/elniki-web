@@ -88,6 +88,7 @@ const Developedoffer = () => {
 
             </div>
         </div>
+
     );
 }
 

@@ -6,9 +6,11 @@
 	color: var(--black); /* Укажите нужный цвет текста */
 	letter-spacing: normal;
   }
+
     
   .logo {
 	color: var(--black); /* Укажите нужный цвет текста */
+
 	font-family: 'Alice';
 	font-style: normal;
 	font-weight: 400;
@@ -26,6 +28,7 @@
 	border: none;
 	cursor: pointer;
 	outline: none;
+
 	position: absolute;
     top: 1rem;
     right: 3rem;
@@ -33,6 +36,7 @@
   
   .menu-list {
 	display: none;
+
   }
   
   .menu-button img {
@@ -49,13 +53,13 @@
 	font-size: 16px;
 	font-weight: 500;
   }
-  
-  .nav-list__item {
+    .nav-list__item {
 	list-style: none;
   }
   
   .nav-list__link {
 	color: var(--black);
+
 	transition: opacity 0.2s ease-in;
 	font-weight: 600;
 	font-size: 20px;
@@ -78,6 +82,7 @@
 	display: block;
 	height: 2px;
 	width: 100%;
+
 	background-color: var(--orange600);
   }
   
@@ -86,11 +91,14 @@
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
+
 	background-color: var(--blue400);
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
+
 	overflow: hidden;
   }
   
@@ -177,7 +185,4 @@
 	}
   }
   
-  
-	
-
   

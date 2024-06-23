@@ -2,6 +2,7 @@ import React from 'react';
 import './Table.css';
 import Kasina from './../img/Kasina.svg';
 import pobrane from './../img/pobrane.svg';
+
 import OnlyTable from './OnlyTable.js';
 import Map from './Map.js';
 
@@ -28,6 +29,7 @@ const Table = () => {
                 <ul className="vertical-list" style={{ gap: '240px' }}>
                     <p className="title-2"><strong>Присоединяйтесь к нам!</strong></p>
                     <img src={pobrane} className="Large-img" />
+
                 </ul>
             </div>
         </div>

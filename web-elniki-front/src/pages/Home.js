@@ -13,7 +13,9 @@ const Home = () => {
             <main className="section">
                 <div className="container">
 				    <ul className="vertical-list">
+
                         <li className="content-list__item font-size-large" style={{width: '600px'}}>      
+
                                 <p >Красивые пейзажи и природные виды? Пикники у костра? 
                                 А может быть, катание на горных лыжах и сноубордах?</p>
                         </li>
@@ -24,6 +26,7 @@ const Home = () => {
                             <ul className="vertical-list">
                                 <li className="content-list__item">
                                     <p className="left-align font-size-large"><span className="bold-text">Кресельный подъемник</span>
+
                                     <br />Первый на горнолыжном курорте в Пермском крае <span className="bold-text"> 
                                     <br />18 отличных трасс</span>
                                     <br />Трассы для любых уровней подготовки</p>
@@ -35,18 +38,22 @@ const Home = () => {
                                 <ul className="horizontal-list">
                                     <img src={image32} className="foreground-image2" />
                                 <li className="content-list__item">
+
                                     <p className="left-align font-size-large"><span className="bold-text">310 метров</span>
+
                                     <br />Максимальный перепад высот на трассах </p>
                                 </li></ul>
                                 <ul className="horizontal-list">
                                     <img src={image33}  className="foreground-image3"/>
                                 <li className="content-list__item">
+
                                 <p className="left-align font-size-large"><span className="bold-text">Современный сноупарк</span>
                                 <br />Широкий современный сноупарк <br />международного уровня</p>
                                 </li></ul>
                                 </ul>
                                 <li className="Large-img">
                                 <img src={skier}  />
+
                             </li>
                             </ul>
                             
