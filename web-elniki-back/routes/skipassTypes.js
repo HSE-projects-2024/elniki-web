@@ -4,7 +4,7 @@ const connection = require('../db');
 
 router.get('/getSkipassTypes', (req, res) => {
     connection.query('SELECT id, skiPassType FROM skipasstypes', (error, results) => {
-        if (error)  {
+        if (error) {
             console.error('Ошибка при получении пользователей:', err);
             res.status(500).json({ error: 'Ошибка сервера' });
             return;

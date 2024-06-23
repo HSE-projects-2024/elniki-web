@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const connection = require('../db');
 
-
-
 router.post('/purchaseSkipass', (req, res) => {
     const { selectedType, quantity, date } = req.body;
     const purchaseDate = new Date().toISOString().slice(0, 19).replace('T', ' ');

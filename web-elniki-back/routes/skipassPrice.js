@@ -4,14 +4,13 @@ const connection = require('../db');
 
 router.get('/getSkipassPrice', (req, res) => {
     const { SkiPassTypeId, quantity } = req.query;
-    // Validate SkiPassTypeId to ensure it is a valid number
+
     if (isNaN(Number(SkiPassTypeId)) || !Number.isInteger(Number(SkiPassTypeId))) {
         return res.status(400).json({ error: 'SkiPassTypeId должен быть целым числом' });
     }
 
-    const skiPassTypeIdInt = parseInt(SkiPassTypeId, 10); // Parse the string to an integer
+    const skiPassTypeIdInt = parseInt(SkiPassTypeId, 10);
     const quantityInt = parseInt(quantity, 10);
-
 
     connection.query('SELECT Price FROM skipasses WHERE SkiPassTypeId = ?', skiPassTypeIdInt, (error, results) => {
         if (error) {
@@ -26,7 +25,7 @@ router.get('/getSkipassPrice', (req, res) => {
         }
 
         const price = results[0].Price;
-        const updatedPrice = price * quantityInt; 
+        const updatedPrice = price * quantityInt;
 
         res.status(200).json({ price: updatedPrice });
     });

@@ -2,7 +2,6 @@ const YooKassa = require('yookassa'); // Подключаем библиотек
 const express = require('express');
 const router = express.Router();
 
-
 // Инициализация Юкассы с тестовыми данными
 const yooKassa = new YooKassa({
     shopId: '403962',
@@ -21,7 +20,7 @@ router.post('/api/payment', async (req, res) => {
             },
             confirmation: {
                 type: 'redirect',
-                return_url: 'http://localhost:3000/api/skiPasses',
+                return_url: 'http://localhost:3001/api/skiPasses',
             },
             description: 'Payment on the site',
         });
@@ -32,4 +31,5 @@ router.post('/api/payment', async (req, res) => {
         res.status(500).json({ error: 'Error creating payment' });
     }
 });
+
 module.exports = router;
