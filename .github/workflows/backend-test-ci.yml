@@ -1,4 +1,4 @@
-name: Back tests CI
+name: Node.js CI
 
 on:
   push:
@@ -13,6 +13,16 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root_password
+          MYSQL_DATABASE: skiresortapp
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -20,24 +30,32 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '20'
+        node-version: '14'
 
     - name: Install dependencies
       run: |
         cd web-elniki-back
         npm install
 
-    - name: Set environment variables
+    - name: Wait for MySQL to be ready
+      run: |
+        echo "Waiting for MySQL to start..."
+        until mysqladmin ping -h localhost --silent; do
+          echo "MySQL is not available yet..."
+          sleep 1
+        done
+        echo "MySQL is up and running!"
+
+    - name: Run tests
       env:
         MYSQL_HOST: localhost
         MYSQL_USER: root
+        MYSQL_PASSWORD: root_password
         MYSQL_DATABASE: skiresortapp
-      run: |
-        echo "MYSQL_HOST=localhost" >> $GITHUB_ENV
-        echo "MYSQL_USER=root" >> $GITHUB_ENV
-        echo "MYSQL_DATABASE=skiresortapp" >> $GITHUB_ENV
-
-    - name: Run tests
       run: |
         cd web-elniki-back
         npm test
+
+    - name: Shutdown MySQL service
+      run: docker stop mysql
+      if: always
