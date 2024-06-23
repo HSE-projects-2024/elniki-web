@@ -2,9 +2,8 @@ const mysql = require('mysql');
 
 // Подключение к БД
 var conn = mysql.createConnection({
-    host: "localhost",
+    host: 'localhost',
     user: 'root',
-    password: 'mysql',
     database: 'skiresortapp'
 });
 
