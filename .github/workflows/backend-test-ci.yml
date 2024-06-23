@@ -3,6 +3,7 @@ name: Back tests CI
 on:
   push:
     branches:
+      - user-back
   pull_request:
     branches:
       - main
@@ -14,10 +15,9 @@ jobs:
 
     services:
       mysql:
-        image: mysql:latest
+        image: mysql:8.0
         env:
           MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: skiresortapp
         options: >-
           --health-cmd="mysqladmin ping"
           --health-interval=10s
