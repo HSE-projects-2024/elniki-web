@@ -13,6 +13,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: skiresortapp
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+        ports:
+          - 3306:3306
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -21,6 +35,13 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '20'
+
+    - name: Wait for MySQL to be ready
+      run: |
+        until nc -z localhost 3306; do
+          echo "Waiting for MySQL to be ready..."
+          sleep 1
+        done
 
     - name: Install dependencies
       run: |
