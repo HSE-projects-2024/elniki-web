@@ -37,8 +37,10 @@ const LogPage = () => {
                 localStorage.clear();
                 sessionStorage.clear();
                 if (rememberMe) {
+                    localStorage.setItem('userId', response.data.userId);
                     localStorage.setItem('jwtToken', response.data.jwtToken);
                 } else {
+                    localStorage.setItem('userId', response.data.userId);
                     sessionStorage.setItem('jwtToken', response.data.jwtToken);
                 }
                 console.log(localStorage.getItem('jwtToken'));
